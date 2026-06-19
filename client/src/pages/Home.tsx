@@ -10,11 +10,18 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { ArrowRight, Shield, TrendingUp, Landmark, Play, Volume2, CheckCircle2, Quote } from "lucide-react";
+import { ArrowRight, Shield, TrendingUp, Landmark, Play, Volume2, CheckCircle2, Quote, Pause, Radio } from "lucide-react";
 
 // Asset URLs
 const HERO_PORTRAIT = "/manus-storage/cobus-nel-portrait_3318fdaa.jpg";
-
+// Logo assets — CSS filter: brightness(0) invert(1) forces any logo to pure white
+const LOGO_KYKNET = "/manus-storage/logo-kyknet-t_642a2cc4.png";
+const LOGO_ONTBYT = "/manus-storage/logo-ontbyt-sake-t_39350ed0.png";
+const LOGO_PRETORIA_FM = "/manus-storage/logo-pretoria-fm-original_70d6d151.png"; // original coloured logo
+const LOGO_EY = "/manus-storage/logo-ey-t_ba28f461.png";
+// Audio assets — Pretoria FM interviews
+const AUDIO_1 = "/manus-storage/ht-250822-Eridanus_c5a2508d.mp3"; // Aug 2022
+const AUDIO_2 = "/manus-storage/HT-260311-ERIDANUS_ba7f8ddb.mp3"; // Mar 2026
 // YouTube Video IDs
 const ONTBYT_SAKE_VIDEO_1 = "ROxZpJNAazM"; // https://youtu.be/ROxZpJNAazM
 const ONTBYT_SAKE_VIDEO_2 = "pKEN61_0fMc"; // https://youtu.be/pKEN61_0fMc
@@ -112,6 +119,89 @@ function YouTubeEmbed({ videoId, title }: { videoId: string; title: string }) {
         </svg>
         <span style={{ fontSize: "9px", fontWeight: 700, color: "rgba(255,255,255,0.85)", letterSpacing: "0.08em" }}>YOUTUBE</span>
       </div>
+    </div>
+  );
+}
+
+// Pretoria FM inline audio player component
+function PretoriaFMPlayer({ src, title, date }: { src: string; title: string; date: string }) {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+
+  const toggle = () => {
+    const a = audioRef.current;
+    if (!a) return;
+    if (playing) { a.pause(); setPlaying(false); }
+    else { a.play(); setPlaying(true); }
+  };
+
+  const fmt = (s: number) => {
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60);
+    return `${m}:${sec.toString().padStart(2, "0")}`;
+  };
+
+  const handleTimeUpdate = () => {
+    const a = audioRef.current;
+    if (!a) return;
+    setCurrentTime(a.currentTime);
+    setProgress(a.duration ? (a.currentTime / a.duration) * 100 : 0);
+  };
+
+  const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
+    const a = audioRef.current;
+    if (!a || !a.duration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    a.currentTime = pct * a.duration;
+  };
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+      <audio
+        ref={audioRef}
+        src={src}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={() => setDuration(audioRef.current?.duration || 0)}
+        onEnded={() => { setPlaying(false); setProgress(0); setCurrentTime(0); }}
+      />
+      <div style={{ display: "flex", alignItems: "center", gap: "0.875rem" }}>
+        {/* Play/Pause button */}
+        <button
+          onClick={toggle}
+          style={{
+            width: "40px", height: "40px", borderRadius: "50%",
+            backgroundColor: "var(--cn-gold)", border: "none", cursor: "pointer",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            flexShrink: 0, transition: "transform 150ms ease",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.08)")}
+          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          aria-label={playing ? "Pause" : "Play"}
+        >
+          {playing
+            ? <Pause size={16} fill="#0d1210" color="#0d1210" />
+            : <Play size={16} fill="#0d1210" color="#0d1210" style={{ marginLeft: "2px" }} />}
+        </button>
+        {/* Track info + progress */}
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+            <span style={{ fontSize: "12px", color: "var(--cn-text-primary)", fontWeight: 500, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", maxWidth: "70%" }}>{title}</span>
+            <span style={{ fontSize: "11px", color: "var(--cn-text-faint)", flexShrink: 0 }}>{fmt(currentTime)} / {duration ? fmt(duration) : "--:--"}</span>
+          </div>
+          {/* Progress bar */}
+          <div
+            onClick={handleSeek}
+            style={{ height: "3px", backgroundColor: "rgba(255,255,255,0.1)", borderRadius: "2px", cursor: "pointer", position: "relative" }}
+          >
+            <div style={{ height: "100%", width: `${progress}%`, backgroundColor: "var(--cn-gold)", borderRadius: "2px", transition: "width 0.1s linear" }} />
+          </div>
+        </div>
+      </div>
+      <p style={{ fontSize: "11px", color: "var(--cn-text-faint)", letterSpacing: "0.06em" }}>{date}</p>
     </div>
   );
 }
@@ -260,16 +350,27 @@ export default function Home() {
           <p style={{ fontSize: "10px", fontWeight: 500, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--cn-text-faint)", textAlign: "center", marginBottom: "32px" }}>As Seen On</p>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "clamp(2rem, 5vw, 4.5rem)", flexWrap: "wrap", rowGap: "2rem" }}>
             {[
-              { src: "/manus-storage/logo-kyknet-t_642a2cc4.png", alt: "kykNET", h: "42px" },
-              { src: "/manus-storage/logo-ontbyt-sake-t_39350ed0.png", alt: "Ontbyt Sake", h: "44px" },
-              { src: "/manus-storage/logo-pretoria-fm-t_0963c907.png", alt: "Pretoria FM", h: "48px" },
-              { src: "/manus-storage/logo-ey-t_ba28f461.png", alt: "Ernst & Young", h: "40px" },
+              { src: LOGO_KYKNET, alt: "kykNET", h: "42px", white: true },
+              { src: LOGO_ONTBYT, alt: "Ontbyt Sake", h: "44px", white: true },
+              { src: LOGO_PRETORIA_FM, alt: "Pretoria FM", h: "48px", white: true },
+              { src: LOGO_EY, alt: "Ernst & Young", h: "40px", white: true },
             ].map((logo) => (
               <div key={logo.alt}
-                style={{ opacity: 0.5, transition: "opacity 250ms ease", cursor: "default", display: "flex", alignItems: "center", justifyContent: "center", height: "48px" }}
+                style={{ opacity: 0.55, transition: "opacity 250ms ease", cursor: "default", display: "flex", alignItems: "center", justifyContent: "center", height: "56px" }}
                 onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
-                onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.5")}>
-                <img src={logo.src} alt={logo.alt} style={{ height: logo.h, width: "auto", maxWidth: "140px", objectFit: "contain" }} />
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.55")}>
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  style={{
+                    height: logo.h,
+                    width: "auto",
+                    maxWidth: "150px",
+                    objectFit: "contain",
+                    // Force white rendering for logos that already have white/transparent treatment
+                    filter: logo.white ? "brightness(0) invert(1)" : "none",
+                  }}
+                />
               </div>
             ))}
           </div>
@@ -344,49 +445,68 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          {/* Pretoria FM Radio Card — full width below videos */}
+          {/* Pretoria FM Radio Card — full width with inline audio players */}
           <FadeIn delay={200}>
-            <div style={{ backgroundColor: "var(--cn-bg-secondary)", display: "grid", gridTemplateColumns: "auto 1fr", gap: "0", borderTop: "none" }}>
+            <div style={{ backgroundColor: "var(--cn-bg-secondary)", display: "grid", gridTemplateColumns: "280px 1fr", gap: "0", borderTop: "none" }} className="cn-radio-card">
               {/* Radio visual panel */}
               <div style={{
-                width: "280px",
-                minHeight: "160px",
                 backgroundColor: "#0a0a0c",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                gap: "12px",
-                padding: "2rem",
+                gap: "16px",
+                padding: "2.5rem 2rem",
                 borderRight: "1px solid var(--cn-border)",
                 position: "relative",
                 overflow: "hidden",
               }}>
-                <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 50% 50%, rgba(212,165,116,0.06) 0%, transparent 70%)" }} />
-                <Volume2 size={28} color="var(--cn-gold)" style={{ opacity: 0.7, position: "relative" }} />
-                <img src="/manus-storage/logo-pretoria-fm-t_0963c907.png" alt="Pretoria FM" style={{ height: "52px", width: "auto", maxWidth: "120px", objectFit: "contain", position: "relative" }} />
-                <div style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", padding: "3px 10px", position: "relative" }}>
-                  <span style={{ fontSize: "9px", fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.14em", textTransform: "uppercase" }}>RADIO</span>
+                {/* Subtle radial glow */}
+                <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 50% 40%, rgba(212,165,116,0.08) 0%, transparent 65%)" }} />
+                {/* Pretoria FM logo — original coloured version looks great on dark */}
+                <img
+                  src={LOGO_PRETORIA_FM}
+                  alt="Pretoria FM"
+                  style={{ width: "120px", height: "auto", objectFit: "contain", position: "relative", borderRadius: "4px" }}
+                />
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px", position: "relative" }}>
+                  <Radio size={18} color="var(--cn-gold)" style={{ opacity: 0.8 }} />
+                  <div style={{ backgroundColor: "rgba(212,165,116,0.12)", border: "1px solid rgba(212,165,116,0.25)", padding: "3px 12px" }}>
+                    <span style={{ fontSize: "9px", fontWeight: 700, color: "var(--cn-gold)", letterSpacing: "0.16em", textTransform: "uppercase" }}>RADIO INTERVIEW</span>
+                  </div>
                 </div>
               </div>
-              {/* Radio content */}
-              <div style={{ padding: "2rem 2.5rem", display: "flex", flexDirection: "column", justifyContent: "center", gap: "0.75rem" }}>
-                <p style={{ fontSize: "10px", color: "var(--cn-text-faint)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Pretoria FM — Live Interview</p>
-                <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "22px", color: "var(--cn-text-primary)", lineHeight: 1.3 }}>
-                  Why most South African investors are unknowingly exposed above the R200,000 guarantee
-                </p>
-                <p style={{ fontSize: "13px", color: "var(--cn-text-secondary)", lineHeight: 1.7, maxWidth: "680px" }}>
-                  On Pretoria FM, Cobus unpacks the mechanics of tax-effective capital structures, the real cost of leaving money in a bank account, and what a secured, fixed-return alternative looks like for the South African investor with R1 million or more ready to work.
-                </p>
-                <div style={{ display: "flex", gap: "1.5rem", alignItems: "center", marginTop: "0.5rem", flexWrap: "wrap" }}>
-                  <a href="https://www.pretoriafm.co.za/" target="_blank" rel="noopener noreferrer"
-                    style={{ fontSize: "12px", color: "var(--cn-gold)", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", letterSpacing: "0.05em" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
-                    onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}>
-                    Listen on Pretoria FM →
-                  </a>
-                  <span style={{ fontSize: "11px", color: "var(--cn-text-faint)" }}>Audio clip available on request</span>
+              {/* Radio content with audio players */}
+              <div style={{ padding: "2rem 2.5rem", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+                <div>
+                  <p style={{ fontSize: "10px", color: "var(--cn-text-faint)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.5rem" }}>Pretoria FM — Live Interviews</p>
+                  <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "22px", color: "var(--cn-text-primary)", lineHeight: 1.3, marginBottom: "0.75rem" }}>
+                    Cobus Nel on capital structures and the South African investor
+                  </p>
+                  <p style={{ fontSize: "13px", color: "var(--cn-text-secondary)", lineHeight: 1.7, maxWidth: "680px" }}>
+                    Two live radio interviews on Pretoria FM. Cobus unpacks the mechanics of tax-effective capital structures, why most investors are unknowingly exposed above the R200,000 deposit guarantee, and what a secured, fixed-return alternative looks like.
+                  </p>
                 </div>
+                {/* Audio players */}
+                <div style={{ display: "flex", flexDirection: "column", gap: "1px", backgroundColor: "var(--cn-border)" }}>
+                  <div style={{ backgroundColor: "var(--cn-bg-primary)", padding: "1.25rem 1.5rem" }}>
+                    <PretoriaFMPlayer
+                      src={AUDIO_1}
+                      title="Eridanus — Capital Structures Interview"
+                      date="Pretoria FM · August 2022"
+                    />
+                  </div>
+                  <div style={{ backgroundColor: "var(--cn-bg-primary)", padding: "1.25rem 1.5rem" }}>
+                    <PretoriaFMPlayer
+                      src={AUDIO_2}
+                      title="Eridanus — Investment Architecture Interview"
+                      date="Pretoria FM · March 2026"
+                    />
+                  </div>
+                </div>
+                <p style={{ fontSize: "11px", color: "var(--cn-text-faint)", lineHeight: 1.6 }}>
+                  Interviews broadcast on Pretoria FM — Onafhanklike, Afrikaanse inhoud.
+                </p>
               </div>
             </div>
           </FadeIn>
