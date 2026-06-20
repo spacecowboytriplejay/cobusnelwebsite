@@ -9,7 +9,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
 
-const HERO_PORTRAIT = "/manus-storage/cobus-nel-portrait_3318fdaa.jpg";
+const HERO_PORTRAIT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/rhUIfCWTeaOjkWeM.jpg";
 const TRUST_VISUAL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663150514473/bELt3eMdoMZiyNfZHqGqyW/cobus-trust-visual-oLXxtGhyx7aSKmCS9MZann.webp";
 
 function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {

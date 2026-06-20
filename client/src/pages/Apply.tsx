@@ -187,10 +187,10 @@ export default function Apply() {
                   <p style={{ fontSize: "10px", color: "var(--cn-text-faint)", letterSpacing: "0.16em", textTransform: "uppercase", marginBottom: "1rem" }}>As Seen On</p>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                     {[
-                      { src: "/manus-storage/logo-kyknet-t_642a2cc4.png", alt: "kykNET", label: "Television" },
-                      { src: "/manus-storage/logo-ontbyt-sake-t_39350ed0.png", alt: "Ontbyt Sake", label: "Business TV" },
-                      { src: "/manus-storage/logo-pretoria-fm-t_0963c907.png", alt: "Pretoria FM", label: "Radio" },
-                      { src: "/manus-storage/logo-ey-t_ba28f461.png", alt: "Ernst & Young", label: "CA(SA) Credential" },
+                      { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png", alt: "kykNET", label: "Television" },
+                      { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png", alt: "Ontbyt Sake", label: "Business TV" },
+                      { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/NxNdeVnuNYsteQPY.png", alt: "Pretoria FM", label: "Radio" },
+                      { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png", alt: "Ernst & Young", label: "CA(SA) Credential" },
                     ].map((logo) => (
                       <div key={logo.alt} style={{ display: "flex", alignItems: "center", gap: "0.875rem", padding: "0.625rem 0.875rem", backgroundColor: "var(--cn-bg-secondary)", border: "1px solid var(--cn-border)" }}>
                         <img src={logo.src} alt={logo.alt} style={{ height: "22px", width: "auto", maxWidth: "70px", objectFit: "contain", opacity: 0.65 }} />

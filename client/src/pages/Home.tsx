@@ -13,15 +13,15 @@ import Footer from "@/components/Footer";
 import { ArrowRight, Shield, TrendingUp, Landmark, Play, Volume2, CheckCircle2, Quote, Pause, Radio } from "lucide-react";
 
 // Asset URLs
-const HERO_PORTRAIT = "/manus-storage/cobus-nel-portrait_3318fdaa.jpg";
+const HERO_PORTRAIT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/rhUIfCWTeaOjkWeM.jpg";
 // Logo assets — CSS filter: brightness(0) invert(1) forces any logo to pure white
-const LOGO_KYKNET = "/manus-storage/logo-kyknet-t_642a2cc4.png";
-const LOGO_ONTBYT = "/manus-storage/logo-ontbyt-sake-t_39350ed0.png";
-const LOGO_PRETORIA_FM = "/manus-storage/logo-pretoria-fm-original_70d6d151.png"; // original coloured logo
-const LOGO_EY = "/manus-storage/logo-ey-t_ba28f461.png";
+const LOGO_KYKNET = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png";
+const LOGO_ONTBYT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png";
+const LOGO_PRETORIA_FM = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/IUchuQCKmgdRVsiM.png"; // original coloured logo
+const LOGO_EY = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png";
 // Audio assets — Pretoria FM interviews
-const AUDIO_1 = "/manus-storage/ht-250822-Eridanus_c5a2508d.mp3"; // Aug 2022
-const AUDIO_2 = "/manus-storage/HT-260311-ERIDANUS_ba7f8ddb.mp3"; // Mar 2026
+const AUDIO_1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/ASlVZMyCLBHSEQKi.mp3"; // Aug 2022
+const AUDIO_2 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/SGKrmzPRwtrYubCu.mp3"; // Mar 2026
 // YouTube Video IDs
 const ONTBYT_SAKE_VIDEO_1 = "ROxZpJNAazM"; // https://youtu.be/ROxZpJNAazM
 const ONTBYT_SAKE_VIDEO_2 = "pKEN61_0fMc"; // https://youtu.be/pKEN61_0fMc
@@ -399,7 +399,7 @@ export default function Home() {
                 <YouTubeEmbed videoId={ONTBYT_SAKE_VIDEO_1} title="Cobus Nel on Ontbyt Sake — Capital Structures" />
                 <div style={{ padding: "1.5rem", flex: 1, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <img src="/manus-storage/logo-ontbyt-sake-t_39350ed0.png" alt="Ontbyt Sake" style={{ height: "22px", width: "auto", objectFit: "contain", opacity: 0.8 }} />
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png" alt="Ontbyt Sake" style={{ height: "22px", width: "auto", objectFit: "contain", opacity: 0.8 }} />
                     <span style={{ fontSize: "9px", color: "var(--cn-text-faint)", letterSpacing: "0.12em", textTransform: "uppercase" }}>kykNET</span>
                     <span style={{ marginLeft: "auto", backgroundColor: "var(--cn-gold)", padding: "2px 8px", fontSize: "9px", fontWeight: 700, color: "#0d1210", letterSpacing: "0.12em", textTransform: "uppercase" }}>TV</span>
                   </div>
@@ -424,7 +424,7 @@ export default function Home() {
                 <YouTubeEmbed videoId={ONTBYT_SAKE_VIDEO_2} title="Cobus Nel on Ontbyt Sake — Investment Architecture" />
                 <div style={{ padding: "1.5rem", flex: 1, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <img src="/manus-storage/logo-ontbyt-sake-t_39350ed0.png" alt="Ontbyt Sake" style={{ height: "22px", width: "auto", objectFit: "contain", opacity: 0.8 }} />
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png" alt="Ontbyt Sake" style={{ height: "22px", width: "auto", objectFit: "contain", opacity: 0.8 }} />
                     <span style={{ fontSize: "9px", color: "var(--cn-text-faint)", letterSpacing: "0.12em", textTransform: "uppercase" }}>kykNET</span>
                     <span style={{ marginLeft: "auto", backgroundColor: "var(--cn-gold)", padding: "2px 8px", fontSize: "9px", fontWeight: 700, color: "#0d1210", letterSpacing: "0.12em", textTransform: "uppercase" }}>TV</span>
                   </div>
@@ -529,7 +529,7 @@ export default function Home() {
                 overflow: "hidden",
               }}>
                 <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.02) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.02) 75%, transparent 75%)", backgroundSize: "60px 60px" }} />
-                <img src="/manus-storage/logo-ey-t_ba28f461.png" alt="Ernst & Young" style={{ height: "44px", width: "auto", maxWidth: "120px", objectFit: "contain", position: "relative" }} />
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png" alt="Ernst & Young" style={{ height: "44px", width: "auto", maxWidth: "120px", objectFit: "contain", position: "relative" }} />
                 <div style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", padding: "3px 10px", position: "relative" }}>
                   <span style={{ fontSize: "9px", fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.14em", textTransform: "uppercase" }}>CREDENTIAL</span>
                 </div>
@@ -650,7 +650,7 @@ export default function Home() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.75rem" }}>
                   {[
                     {
-                      logo: "/manus-storage/logo-ey-t_ba28f461.png",
+                      logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png",
                       title: "CA(SA) — Ernst & Young",
                       detail: "Articles at EY Pretoria. All board exams passed first time. Seconded to EY Bermuda for international financial structures.",
                     },
@@ -980,10 +980,10 @@ export default function Home() {
             {/* Trust badges at CTA */}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "2rem", marginBottom: "2.5rem", flexWrap: "wrap" }}>
               {[
-                { src: "/manus-storage/logo-kyknet-t_642a2cc4.png", alt: "kykNET", h: "28px" },
-                { src: "/manus-storage/logo-ontbyt-sake-t_39350ed0.png", alt: "Ontbyt Sake", h: "30px" },
-                { src: "/manus-storage/logo-pretoria-fm-t_0963c907.png", alt: "Pretoria FM", h: "32px" },
-                { src: "/manus-storage/logo-ey-t_ba28f461.png", alt: "EY", h: "26px" },
+                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png", alt: "kykNET", h: "28px" },
+                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png", alt: "Ontbyt Sake", h: "30px" },
+                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/NxNdeVnuNYsteQPY.png", alt: "Pretoria FM", h: "32px" },
+                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png", alt: "EY", h: "26px" },
               ].map((logo) => (
                 <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: logo.h, width: "auto", objectFit: "contain", opacity: 0.35 }} />
               ))}
