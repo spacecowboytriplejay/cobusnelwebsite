@@ -189,7 +189,7 @@ export default function Apply() {
                     {[
                       { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png", alt: "kykNET", label: "Television" },
                       { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png", alt: "Ontbyt Sake", label: "Business TV" },
-                      { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/NxNdeVnuNYsteQPY.png", alt: "Pretoria FM", label: "Radio" },
+                      { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WUnIpufjtRKprHES.png", alt: "Pretoria FM", label: "Radio" },
                       { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png", alt: "Ernst & Young", label: "CA(SA) Credential" },
                     ].map((logo) => (
                       <div key={logo.alt} style={{ display: "flex", alignItems: "center", gap: "0.875rem", padding: "0.625rem 0.875rem", backgroundColor: "var(--cn-bg-secondary)", border: "1px solid var(--cn-border)" }}>

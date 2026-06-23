@@ -17,7 +17,8 @@ const HERO_PORTRAIT = "https://files.manuscdn.com/user_upload_by_module/session_
 // Logo assets, CSS filter: brightness(0) invert(1) forces any logo to pure white
 const LOGO_KYKNET = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png";
 const LOGO_ONTBYT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png";
-const LOGO_PRETORIA_FM = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/IUchuQCKmgdRVsiM.png"; // original coloured logo
+const LOGO_PRETORIA_FM = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WUnIpufjtRKprHES.png"; // clean white logo on transparent bg
+const LOGO_PRETORIA_FM_COLOUR = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/IUchuQCKmgdRVsiM.png"; // original coloured logo for audio card
 const LOGO_EY = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png";
 // Audio assets, Pretoria FM interviews
 const AUDIO_1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/ASlVZMyCLBHSEQKi.mp3"; // Aug 2022
@@ -352,7 +353,7 @@ export default function Home() {
             {[
               { src: LOGO_KYKNET, alt: "kykNET", h: "42px", white: true },
               { src: LOGO_ONTBYT, alt: "Ontbyt Sake", h: "44px", white: true },
-              { src: LOGO_PRETORIA_FM, alt: "Pretoria FM", h: "48px", white: true },
+              { src: LOGO_PRETORIA_FM, alt: "Pretoria FM", h: "48px", white: false },
               { src: LOGO_EY, alt: "Ernst & Young", h: "40px", white: true },
             ].map((logo) => (
               <div key={logo.alt}
@@ -465,7 +466,7 @@ export default function Home() {
                 <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 50% 40%, rgba(212,165,116,0.08) 0%, transparent 65%)" }} />
                 {/* Pretoria FM logo, original coloured version looks great on dark */}
                 <img
-                  src={LOGO_PRETORIA_FM}
+                  src={LOGO_PRETORIA_FM_COLOUR}
                   alt="Pretoria FM"
                   style={{ width: "120px", height: "auto", objectFit: "contain", position: "relative", borderRadius: "4px" }}
                 />
@@ -982,7 +983,7 @@ export default function Home() {
               {[
                 { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png", alt: "kykNET", h: "28px" },
                 { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png", alt: "Ontbyt Sake", h: "30px" },
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/NxNdeVnuNYsteQPY.png", alt: "Pretoria FM", h: "32px" },
+                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WUnIpufjtRKprHES.png", alt: "Pretoria FM", h: "32px" },
                 { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png", alt: "EY", h: "26px" },
               ].map((logo) => (
                 <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: logo.h, width: "auto", objectFit: "contain", opacity: 0.35 }} />

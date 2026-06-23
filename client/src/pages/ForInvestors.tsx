@@ -186,7 +186,7 @@ export default function ForInvestors() {
               {[
                 { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png", alt: "kykNET", h: "26px" },
                 { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png", alt: "Ontbyt Sake", h: "28px" },
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/NxNdeVnuNYsteQPY.png", alt: "Pretoria FM", h: "30px" },
+                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WUnIpufjtRKprHES.png", alt: "Pretoria FM", h: "30px" },
                 { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png", alt: "Ernst & Young", h: "24px" },
               ].map((logo) => (
                 <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: logo.h, width: "auto", objectFit: "contain", opacity: 0.4 }} />
@@ -248,7 +248,7 @@ export default function ForInvestors() {
               {[
                 { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png", alt: "kykNET", h: "24px" },
                 { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png", alt: "Ontbyt Sake", h: "26px" },
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/NxNdeVnuNYsteQPY.png", alt: "Pretoria FM", h: "28px" },
+                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WUnIpufjtRKprHES.png", alt: "Pretoria FM", h: "28px" },
                 { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png", alt: "EY", h: "22px" },
               ].map((logo) => (
                 <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: logo.h, width: "auto", objectFit: "contain", opacity: 0.35 }} />
