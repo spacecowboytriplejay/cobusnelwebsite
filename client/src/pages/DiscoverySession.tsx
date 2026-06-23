@@ -38,7 +38,7 @@ const steps = [
   },
   {
     num: "02",
-    title: "Tax-Effective Structures",
+    title: "Tax-Efficient Structures",
     body: "How the capital is held matters as much as where it is invested. The session examines the current holding structures: which are working, which are costing the investor money they do not need to spend, and which structures could be optimised before any investment decision is made.",
   },
   {

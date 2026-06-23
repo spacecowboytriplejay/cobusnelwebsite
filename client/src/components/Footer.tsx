@@ -13,7 +13,7 @@ export default function Footer() {
           <div style={{ gridColumn: "span 1" }}>
             <div className="cn-wordmark" style={{ fontSize: "26px", marginBottom: "1rem" }}>Cobus Nel</div>
             <p style={{ fontSize: "14px", color: "var(--cn-text-secondary)", lineHeight: 1.7, maxWidth: "280px" }}>
-              South Africa's Capital Architect. CA(SA). Chief Investment Officer at Eridanus, a registered FSP and Section 12J venture capital company.
+              South Africa's Capital Architect. CA(SA). Chief Investment Officer at Eridanus, a registered FSP and registered Venture Capital Company (VCC).
             </p>
             <p style={{ fontSize: "12px", color: "var(--cn-text-faint)", marginTop: "1rem" }}>
               FSP 48947 | Operating since 2018
@@ -71,7 +71,7 @@ export default function Footer() {
             This website is for informational purposes only and does not constitute financial advice. Cobus Nel and Eridanus provide access to a diagnostic process, not regulated financial advice. All investment decisions should be made in consultation with a qualified financial advisor. Past performance is not indicative of future results.
           </p>
           <p className="cn-disclaimer">
-            Eridanus is a registered Financial Services Provider (FSP 48947) and a Section 12J venture capital company. All investments carry risk. The R200,000 government deposit guarantee applies to qualifying bank deposits only. Returns quoted are indicative net figures after dividends withholding tax and are subject to individual circumstances and SARS assessment. Consult a qualified tax practitioner before investing.
+            Eridanus is a registered Financial Services Provider (FSP 48947) and a registered Venture Capital Company (VCC). All investments carry risk. The R200,000 government deposit guarantee applies to qualifying bank deposits only. Returns quoted are indicative net figures after dividends withholding tax and are subject to individual circumstances and SARS assessment. Consult a qualified tax practitioner before investing.
           </p>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem", marginTop: "0.5rem" }}>
             <p className="cn-disclaimer">

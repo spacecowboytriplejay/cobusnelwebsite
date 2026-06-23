@@ -68,8 +68,8 @@ const articles = [
     readTime: "4 min read",
   },
   {
-    title: "Section 12J: the structure, the benefit, and the investor it suits",
-    excerpt: "Section 12J venture capital companies offer a specific tax benefit for South African investors. Here is how the structure works, what the benefit is, and which investor profile it suits.",
+    title: "Venture Capital: the structure, the benefit, and the investor it suits",
+    excerpt: "Venture Capital companies offer a specific tax benefit for South African investors. Here is how the structure works, what the benefit is, and which investor profile it suits.",
     date: "2024",
     category: "Tax and Returns",
     readTime: "9 min read",
@@ -117,7 +117,7 @@ export default function Insights() {
               Capital intelligence.
             </h1>
             <p style={{ fontSize: "var(--type-body-lg)", color: "var(--cn-text-secondary)", maxWidth: "560px", lineHeight: 1.75 }}>
-              Articles and perspectives on capital architecture, agricultural investment, tax-effective structures, and the South African private investment landscape. Written by an operator, not a marketer.
+              Articles and perspectives on capital architecture, agricultural investment, tax-efficient structures, and the South African private investment landscape. Written by an operator, not a marketer.
             </p>
           </FadeIn>
         </div>

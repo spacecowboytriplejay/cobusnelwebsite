@@ -43,15 +43,15 @@ const faqs = [
   },
   {
     q: "Is Eridanus a registered financial services provider?",
-    a: "Yes. Eridanus is a registered Financial Services Provider (FSP 48947) and a Section 12J venture capital company. It has been operating since 2018. The FSP registration is publicly verifiable through the FSCA. Cobus Nel is the Chief Investment Officer.",
+    a: "Yes. Eridanus is a registered Financial Services Provider (FSP 48947) and a registered Venture Capital Company (VCC). It has been operating since 2018. The FSP registration is publicly verifiable through the FSCA. Cobus Nel is the Chief Investment Officer.",
   },
   {
-    q: "What is Section 12J and how does it benefit me?",
-    a: "Section 12J of the Income Tax Act provides a tax incentive for investments in approved venture capital companies. An investment in a qualifying Section 12J company is deductible from taxable income in the year of investment. The specific benefit depends on the investor's individual tax position. Consult a qualified tax practitioner before investing.",
+    q: "How is the Eridanus investment structured for tax efficiency?",
+    a: "Eridanus is structured as a registered Venture Capital Company (VCC). Dividends received by investors are after-tax income. Returns are paid as dividends, which means investors receive them net of dividends tax. This is a key distinction from many other investment structures where gross returns are quoted and tax is deducted later. Eridanus quotes the net figure because that is the number the investor actually receives. Consult a qualified tax practitioner before investing.",
   },
   {
     q: "What is a Discovery Session?",
-    a: "The Discovery Session is a structured, seven-touchpoint diagnostic conversation. It covers position diagnostics, tax-effective structures, life insurance audit, estate planning, trust review, an operator-grounded investment explanation, and the calibrated net-return conversation. It is not a sales pitch. It is a diagnostic. One session. No obligation. The value is in the diagnosis itself.",
+    a: "The Discovery Session is a structured, seven-touchpoint diagnostic conversation. It covers position diagnostics, tax-efficient structures, life insurance audit, estate planning, trust review, an operator-grounded investment explanation, and the calibrated net-return conversation. It is not a sales pitch. It is a diagnostic. One session. No obligation. The value is in the diagnosis itself.",
   },
   {
     q: "Is this financial advice?",

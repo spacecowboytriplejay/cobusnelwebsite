@@ -14,12 +14,12 @@ import { ArrowRight, Shield, TrendingUp, Landmark, Play, Volume2, CheckCircle2, 
 
 // Asset URLs
 const HERO_PORTRAIT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/rhUIfCWTeaOjkWeM.jpg";
-// Logo assets — CSS filter: brightness(0) invert(1) forces any logo to pure white
+// Logo assets, CSS filter: brightness(0) invert(1) forces any logo to pure white
 const LOGO_KYKNET = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png";
 const LOGO_ONTBYT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png";
 const LOGO_PRETORIA_FM = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/IUchuQCKmgdRVsiM.png"; // original coloured logo
 const LOGO_EY = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png";
-// Audio assets — Pretoria FM interviews
+// Audio assets, Pretoria FM interviews
 const AUDIO_1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/ASlVZMyCLBHSEQKi.mp3"; // Aug 2022
 const AUDIO_2 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/SGKrmzPRwtrYubCu.mp3"; // Mar 2026
 // YouTube Video IDs
@@ -206,14 +206,14 @@ function PretoriaFMPlayer({ src, title, date }: { src: string; title: string; da
   );
 }
 
-// ICP Case Study data — anonymized archetypes based on Eridanus ICP research
+// ICP Case Study data, anonymized archetypes based on Eridanus ICP research
 const CASE_STUDIES = [
   {
     archetype: "The Late-Career Professional",
     profile: "Corporate Executive, Pretoria",
     capitalRange: "R2.5M – R5M",
     challenge: "30 years of corporate income, a pension fund performing below inflation, and a tax bill that consumed 40% of annual earnings. His capital was working for the bank, not for him.",
-    structure: "Cobus restructured his capital allocation into a Section 12J vehicle, reducing his taxable income in the year of investment and securing a fixed net return against physical agricultural assets.",
+    structure: "Cobus restructured his capital allocation into a Venture Capital vehicle, reducing his taxable income in the year of investment and securing a fixed net return against physical agricultural assets.",
     outcome: "~11.5% net per annum",
     quote: "For the first time, I understood exactly what my money was doing and why. Not a projection. A structure.",
     icon: <Landmark size={20} color="var(--cn-gold)" />,
@@ -232,7 +232,7 @@ const CASE_STUDIES = [
     archetype: "The Security-Driven Allocator",
     profile: "Former Entrepreneur, Family Office",
     capitalRange: "R10M+",
-    challenge: "He had seen too many 'guaranteed returns' schemes collapse. His primary concern was not yield — it was security. He wanted to understand exactly what his capital was secured against before he would consider any conversation.",
+    challenge: "He had seen too many 'guaranteed returns' schemes collapse. His primary concern was not yield. It was security. He wanted to understand exactly what his capital was secured against before he would consider any conversation.",
     structure: "The Eridanus structure secured his capital against physical agricultural assets valued above the entry price from day one. Fixed net returns. Agreed before deployment. No ambiguity.",
     outcome: "Bespoke structure",
     quote: "Cobus was the first person who showed me the asset before asking for the capital.",
@@ -278,7 +278,7 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={200}>
             <p style={{ fontSize: "var(--type-body-lg)", color: "var(--cn-text-secondary)", maxWidth: "480px", lineHeight: 1.75, marginBottom: "2.5rem" }}>
-              Cobus Nel is a CA(SA) and the Chief Investment Officer of Eridanus — a registered Section 12J venture capital company acquiring real South African agricultural assets at below-market value. Fixed net returns. Secured by physical assets.
+              Cobus Nel is a CA(SA) and the Chief Investment Officer of Eridanus, a registered Venture Capital Company (VCC) acquiring real South African agricultural assets at below-market value. Fixed net returns. Secured by physical assets.
             </p>
           </FadeIn>
           <FadeIn delay={300}>
@@ -300,7 +300,7 @@ export default function Home() {
               {[
                 { figure: "2018", label: "Founded" },
                 { figure: "FSP 48947", label: "Registered FSP" },
-                { figure: "Sec. 12J", label: "VCC Status" },
+                { figure: "VCC Active", label: "Investor Mandate" },
               ].map((item) => (
                 <div key={item.label}>
                   <p className="cn-figure" style={{ fontSize: "18px" }}>{item.figure}</p>
@@ -377,7 +377,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FEATURED APPEARANCES — YOUTUBE EMBEDS ──────────────────────────── */}
+      {/* ── FEATURED APPEARANCES, YOUTUBE EMBEDS ──────────────────────────── */}
       <section className="cn-section" style={{ backgroundColor: "var(--cn-bg-primary)", borderBottom: "1px solid var(--cn-border)" }}>
         <div className="container">
           <FadeIn>
@@ -387,7 +387,7 @@ export default function Home() {
                 <h2 className="cn-headline" style={{ fontSize: "var(--type-h2)" }}>Cobus on capital. On air.</h2>
               </div>
               <p style={{ fontSize: "13px", color: "var(--cn-text-faint)", maxWidth: "320px", lineHeight: 1.65, textAlign: "right" }}>
-                Television and radio appearances on South African capital markets, agricultural investment, and tax-effective structures.
+                Television and radio appearances on South African capital markets, agricultural investment, and tax-efficient structures.
               </p>
             </div>
           </FadeIn>
@@ -396,7 +396,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", backgroundColor: "var(--cn-border)", marginBottom: "1px" }}>
             <FadeIn delay={0}>
               <div style={{ backgroundColor: "var(--cn-bg-secondary)", display: "flex", flexDirection: "column", height: "100%" }}>
-                <YouTubeEmbed videoId={ONTBYT_SAKE_VIDEO_1} title="Cobus Nel on Ontbyt Sake — Capital Structures" />
+                <YouTubeEmbed videoId={ONTBYT_SAKE_VIDEO_1} title="Cobus Nel on Ontbyt Sake | Capital Structures" />
                 <div style={{ padding: "1.5rem", flex: 1, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png" alt="Ontbyt Sake" style={{ height: "22px", width: "auto", objectFit: "contain", opacity: 0.8 }} />
@@ -407,7 +407,7 @@ export default function Home() {
                     Capital structures and agricultural investment in South Africa
                   </p>
                   <p style={{ fontSize: "13px", color: "var(--cn-text-secondary)", lineHeight: 1.65, flex: 1 }}>
-                    Cobus Nel explains how Eridanus acquires physical agricultural assets at below-market value and why the Section 12J structure creates a compelling net-return case for serious investors.
+                    Cobus Nel explains how Eridanus acquires physical agricultural assets at below-market value and why the Venture Capital structure creates a compelling net-return case for serious investors.
                   </p>
                   <a href={`https://www.youtube.com/watch?v=${ONTBYT_SAKE_VIDEO_1}`} target="_blank" rel="noopener noreferrer"
                     style={{ fontSize: "12px", color: "var(--cn-gold)", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", marginTop: "auto", letterSpacing: "0.05em" }}
@@ -421,7 +421,7 @@ export default function Home() {
 
             <FadeIn delay={100}>
               <div style={{ backgroundColor: "var(--cn-bg-secondary)", display: "flex", flexDirection: "column", height: "100%" }}>
-                <YouTubeEmbed videoId={ONTBYT_SAKE_VIDEO_2} title="Cobus Nel on Ontbyt Sake — Investment Architecture" />
+                <YouTubeEmbed videoId={ONTBYT_SAKE_VIDEO_2} title="Cobus Nel on Ontbyt Sake | Investment Architecture" />
                 <div style={{ padding: "1.5rem", flex: 1, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png" alt="Ontbyt Sake" style={{ height: "22px", width: "auto", objectFit: "contain", opacity: 0.8 }} />
@@ -432,7 +432,7 @@ export default function Home() {
                     Investment architecture for the South African investor
                   </p>
                   <p style={{ fontSize: "13px", color: "var(--cn-text-secondary)", lineHeight: 1.65, flex: 1 }}>
-                    A second conversation on Ontbyt Sake covering the mechanics of tax-effective capital structures, the Eridanus investment vehicle, and what separates a secured return from a speculative one.
+                    A second conversation on Ontbyt Sake covering the mechanics of tax-efficient investment structures, the Eridanus investment vehicle, and what separates a secured return from a speculative one.
                   </p>
                   <a href={`https://www.youtube.com/watch?v=${ONTBYT_SAKE_VIDEO_2}`} target="_blank" rel="noopener noreferrer"
                     style={{ fontSize: "12px", color: "var(--cn-gold)", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", marginTop: "auto", letterSpacing: "0.05em" }}
@@ -445,7 +445,7 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          {/* Pretoria FM Radio Card — full width with inline audio players */}
+          {/* Pretoria FM Radio Card, full width with inline audio players */}
           <FadeIn delay={200}>
             <div style={{ backgroundColor: "var(--cn-bg-secondary)", display: "grid", gridTemplateColumns: "280px 1fr", gap: "0", borderTop: "none" }} className="cn-radio-card">
               {/* Radio visual panel */}
@@ -463,7 +463,7 @@ export default function Home() {
               }}>
                 {/* Subtle radial glow */}
                 <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 50% 40%, rgba(212,165,116,0.08) 0%, transparent 65%)" }} />
-                {/* Pretoria FM logo — original coloured version looks great on dark */}
+                {/* Pretoria FM logo, original coloured version looks great on dark */}
                 <img
                   src={LOGO_PRETORIA_FM}
                   alt="Pretoria FM"
@@ -479,12 +479,12 @@ export default function Home() {
               {/* Radio content with audio players */}
               <div style={{ padding: "2rem 2.5rem", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
                 <div>
-                  <p style={{ fontSize: "10px", color: "var(--cn-text-faint)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.5rem" }}>Pretoria FM — Live Interviews</p>
+                  <p style={{ fontSize: "10px", color: "var(--cn-text-faint)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.5rem" }}>Pretoria FM | Live Interviews</p>
                   <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "22px", color: "var(--cn-text-primary)", lineHeight: 1.3, marginBottom: "0.75rem" }}>
                     Cobus Nel on capital structures and the South African investor
                   </p>
                   <p style={{ fontSize: "13px", color: "var(--cn-text-secondary)", lineHeight: 1.7, maxWidth: "680px" }}>
-                    Two live radio interviews on Pretoria FM. Cobus unpacks the mechanics of tax-effective capital structures, why most investors are unknowingly exposed above the R200,000 deposit guarantee, and what a secured, fixed-return alternative looks like.
+                    Two live radio interviews on Pretoria FM. Cobus unpacks the mechanics of tax-efficient investment structures, why most investors are unknowingly exposed above the R200,000 deposit guarantee, and what a secured, fixed-return alternative looks like.
                   </p>
                 </div>
                 {/* Audio players */}
@@ -492,26 +492,26 @@ export default function Home() {
                   <div style={{ backgroundColor: "var(--cn-bg-primary)", padding: "1.25rem 1.5rem" }}>
                     <PretoriaFMPlayer
                       src={AUDIO_1}
-                      title="Eridanus — Capital Structures Interview"
+                      title="Eridanus | Capital Structures Interview"
                       date="Pretoria FM · August 2022"
                     />
                   </div>
                   <div style={{ backgroundColor: "var(--cn-bg-primary)", padding: "1.25rem 1.5rem" }}>
                     <PretoriaFMPlayer
                       src={AUDIO_2}
-                      title="Eridanus — Investment Architecture Interview"
+                      title="Eridanus | Investment Architecture Interview"
                       date="Pretoria FM · March 2026"
                     />
                   </div>
                 </div>
                 <p style={{ fontSize: "11px", color: "var(--cn-text-faint)", lineHeight: 1.6 }}>
-                  Interviews broadcast on Pretoria FM — Onafhanklike, Afrikaanse inhoud.
+                  Interviews broadcast on Pretoria FM | Onafhanklike, Afrikaanse inhoud.
                 </p>
               </div>
             </div>
           </FadeIn>
 
-          {/* EY Credential card — full width */}
+          {/* EY Credential card, full width */}
           <FadeIn delay={250}>
             <div style={{ backgroundColor: "var(--cn-bg-secondary)", display: "grid", gridTemplateColumns: "auto 1fr", gap: "0", borderTop: "1px solid var(--cn-border)", marginTop: "1px" }}>
               <div style={{
@@ -535,9 +535,9 @@ export default function Home() {
                 </div>
               </div>
               <div style={{ padding: "2rem 2.5rem", display: "flex", flexDirection: "column", justifyContent: "center", gap: "0.75rem" }}>
-                <p style={{ fontSize: "10px", color: "var(--cn-text-faint)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Ernst & Young — Pretoria & Bermuda</p>
+                <p style={{ fontSize: "10px", color: "var(--cn-text-faint)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Ernst & Young | Pretoria & Bermuda</p>
                 <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "22px", color: "var(--cn-text-primary)", lineHeight: 1.3 }}>
-                  CA(SA) — All board exams passed first time
+                  CA(SA) | All board exams passed first time
                 </p>
                 <p style={{ fontSize: "13px", color: "var(--cn-text-secondary)", lineHeight: 1.7, maxWidth: "680px" }}>
                   Cobus Nel completed his CA(SA) articles at EY Pretoria, passed all board exams first time, and was seconded to EY Bermuda for international financial structures work. The standard behind every number he quotes.
@@ -604,15 +604,15 @@ export default function Home() {
               </div>
             </FadeIn>
             <FadeIn delay={150}>
-              {/* Trust mandate card — replaces AI image */}
+              {/* Trust mandate card, replaces AI image */}
               <div style={{ backgroundColor: "var(--cn-bg-secondary)", border: "1px solid var(--cn-border)", padding: "3rem" }}>
                 <p style={{ fontSize: "10px", color: "var(--cn-text-faint)", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "2rem" }}>Eridanus Investment Mandate</p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
                   {[
                     { label: "Capital Security", value: "Secured against physical agricultural assets valued above entry price from day one." },
                     { label: "Return Basis", value: "Fixed net returns. Agreed before capital is deployed. Not projected. Agreed." },
-                    { label: "Tax Structure", value: "Section 12J deductible in year of investment. Net figures quoted after dividends withholding tax." },
-                    { label: "Regulatory Status", value: "Registered FSP 48947. Section 12J VCC. CA(SA) qualified management." },
+                    { label: "Tax Structure", value: "Venture Capital deductible in year of investment. Net figures quoted after dividends withholding tax." },
+                    { label: "Regulatory Status", value: "Registered FSP 48947. Venture Capital Company (VCC). CA(SA) qualified management." },
                   ].map((item) => (
                     <div key={item.label} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
                       <CheckCircle2 size={16} color="var(--cn-gold)" style={{ marginTop: "2px", flexShrink: 0 }} />
@@ -644,14 +644,14 @@ export default function Home() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "center" }} className="cn-architect-grid">
             <FadeIn>
-              {/* Credentials card — replaces AI office consultation image */}
+              {/* Credentials card, replaces AI office consultation image */}
               <div style={{ backgroundColor: "var(--cn-bg-primary)", border: "1px solid var(--cn-border)", padding: "3rem" }}>
                 <p style={{ fontSize: "10px", color: "var(--cn-text-faint)", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "2rem" }}>Verified Credentials</p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.75rem" }}>
                   {[
                     {
                       logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png",
-                      title: "CA(SA) — Ernst & Young",
+                      title: "CA(SA), Ernst & Young",
                       detail: "Articles at EY Pretoria. All board exams passed first time. Seconded to EY Bermuda for international financial structures.",
                     },
                     {
@@ -662,14 +662,14 @@ export default function Home() {
                     },
                     {
                       logo: null,
-                      badge: "Sec. 12J",
-                      title: "Section 12J Venture Capital Company",
+                      badge: "VCC Active",
+                      title: "Venture Capital Venture Capital Company",
                       detail: "SARS-approved VCC status. Investment deductible from taxable income in the year of investment.",
                     },
                     {
                       logo: null,
                       badge: "2018",
-                      title: "Eridanus — Co-founded with Martin van Vuuren",
+                      title: "Eridanus | Co-founded with Martin van Vuuren",
                       detail: "Operating since 2018. Acquiring South African agricultural assets at below-market value.",
                     },
                   ].map((item) => (
@@ -699,7 +699,7 @@ export default function Home() {
                 Cobus Nel trained at Ernst & Young in Pretoria, passed all CA(SA) board exams first time, and was seconded to EY Bermuda for international financial structures work. He traded commodities at Export Trading Group, has hands-on farming experience, and has navigated business rescues and liquidations.
               </p>
               <p style={{ color: "var(--cn-text-secondary)", lineHeight: 1.8, marginBottom: "2rem" }}>
-                He co-founded Eridanus with Martin van Vuuren in 2018. The firm has been operating as a registered FSP (FSP 48947) and Section 12J venture capital company since inception.
+                He co-founded Eridanus with Martin van Vuuren in 2018. The firm has been operating as a registered FSP (FSP 48947) and registered Venture Capital Company (VCC) since inception.
               </p>
               <div style={{ display: "flex", gap: "2rem", paddingTop: "1.5rem", borderTop: "1px solid var(--cn-border)", marginBottom: "2rem" }}>
                 {[
@@ -739,7 +739,7 @@ export default function Home() {
                 Eridanus.
               </h2>
               <p style={{ fontSize: "var(--type-body-lg)", color: "var(--cn-text-secondary)", maxWidth: "580px", margin: "0 auto", lineHeight: 1.75 }}>
-                A registered Section 12J venture capital company acquiring real South African agricultural assets at below-market value. The investor's capital is secured against physical assets worth more than the entry price from day one.
+                A registered registered Venture Capital Company (VCC) acquiring real South African agricultural assets at below-market value. The investor's capital is secured against physical assets worth more than the entry price from day one.
               </p>
             </div>
           </FadeIn>
@@ -758,8 +758,8 @@ export default function Home() {
               },
               {
                 icon: <Landmark size={24} color="var(--cn-gold)" />,
-                title: "Section 12J Tax Benefit",
-                body: "Investments in qualifying Section 12J companies are deductible from taxable income in the year of investment. The specific benefit depends on individual tax position.",
+                title: "Venture Capital Tax Benefit",
+                body: "Investments in qualifying Venture Capital Companies are deductible from taxable income in the year of investment. The specific benefit depends on individual tax position.",
               },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 100}>
@@ -805,7 +805,7 @@ export default function Home() {
             {[
               { tier: "R1M – R2.5M", rate: "~11%", note: "Net per annum", sub: "Capital Architect routing" },
               { tier: "R2.5M – R5M", rate: "~11.5%", note: "Net per annum", sub: "Direct Cobus Nel routing" },
-              { tier: "R5M+", rate: "~12.5%", note: "Net per annum", sub: "Priority routing — 24hr response" },
+              { tier: "R5M+", rate: "~12.5%", note: "Net per annum", sub: "Priority routing | 24hr response" },
             ].map((row, i) => (
               <FadeIn key={row.tier} delay={i * 80}>
                 <div style={{ backgroundColor: "var(--cn-bg-primary)", padding: "2.5rem", position: "relative" }}>
@@ -923,7 +923,7 @@ export default function Home() {
                 One session.<br />Seven touchpoints.
               </h2>
               <p style={{ color: "var(--cn-text-secondary)", lineHeight: 1.8, marginBottom: "2rem" }}>
-                The Discovery Session is a structured, seven-touchpoint diagnostic conversation. It covers position diagnostics, tax-effective structures, life insurance audit, estate planning, trust review, an operator-grounded investment explanation, and the calibrated net-return conversation.
+                The Discovery Session is a structured, seven-touchpoint diagnostic conversation. It covers position diagnostics, tax-efficient structures, life insurance audit, estate planning, trust review, an operator-grounded investment explanation, and the calibrated net-return conversation.
               </p>
               <p style={{ color: "var(--cn-text-secondary)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
                 It is not a sales pitch. It is a diagnostic. One session. No obligation. The value is in the diagnosis itself.
@@ -938,7 +938,7 @@ export default function Home() {
               <div style={{ display: "flex", flexDirection: "column", gap: "1px", backgroundColor: "var(--cn-border)" }}>
                 {[
                   { num: "01", title: "Position Diagnostics", desc: "Where your capital is. How it is structured. What it is actually earning net." },
-                  { num: "02", title: "Tax-Effective Structures", desc: "Legal structures that reduce your tax exposure. Not avoidance. Architecture." },
+                  { num: "02", title: "Tax-Efficient Structures", desc: "Legal structures that reduce your tax exposure. Not avoidance. Architecture." },
                   { num: "03", title: "Life Insurance Audit", desc: "Most policies are over-priced and under-performing. The audit reveals the gap." },
                   { num: "04", title: "Estate Planning", desc: "What happens to your capital when you are not here. The honest conversation." },
                   { num: "05", title: "Trust Review", desc: "If you have a trust, is it structured correctly? Is it working for you?" },
@@ -994,7 +994,7 @@ export default function Home() {
               </span>
             </Link>
             <p className="cn-disclaimer" style={{ marginTop: "2rem" }}>
-              Eridanus is a registered FSP (FSP 48947) and Section 12J VCC. All investments carry risk. This is not financial advice.
+              Eridanus is a registered FSP (FSP 48947) and Venture Capital Company (VCC). All investments carry risk. This is not financial advice.
             </p>
           </FadeIn>
         </div>
@@ -1004,7 +1004,7 @@ export default function Home() {
       <div className="cn-mobile-cta-bar">
         <div style={{ flex: 1 }}>
           <p style={{ fontSize: "11px", color: "var(--cn-text-faint)", letterSpacing: "0.08em", marginBottom: "2px" }}>Capital floor: R1M+</p>
-          <p style={{ fontSize: "13px", color: "var(--cn-text-primary)", fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}>Cobus Nel — Capital Architect</p>
+          <p style={{ fontSize: "13px", color: "var(--cn-text-primary)", fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}>Cobus Nel | Capital Architect</p>
         </div>
         <Link href="/apply">
           <span className="cn-btn-primary" style={{ fontSize: "12px", padding: "12px 20px", whiteSpace: "nowrap" }}>
