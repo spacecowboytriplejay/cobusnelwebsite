@@ -214,8 +214,8 @@ const CASE_STUDIES = [
     profile: "Corporate Executive, Pretoria",
     capitalRange: "R2.5M – R5M",
     challenge: "30 years of corporate income, a pension fund performing below inflation, and a tax bill that consumed 40% of annual earnings. His capital was working for the bank, not for him.",
-    structure: "Cobus restructured his capital allocation into a Venture Capital vehicle, reducing his taxable income in the year of investment and securing a fixed net return against physical agricultural assets.",
-    outcome: "~11.5% net per annum",
+    structure: "Cobus restructured his capital allocation into a Venture Capital vehicle, securing a structured return against physical agricultural assets. Dividends received are after-tax income, quoted net of dividends withholding tax.",
+    outcome: "Structured return",
     quote: "For the first time, I understood exactly what my money was doing and why. Not a projection. A structure.",
     icon: <Landmark size={20} color="var(--cn-gold)" />,
   },
@@ -225,7 +225,7 @@ const CASE_STUDIES = [
     capitalRange: "R5M+",
     challenge: "His entire net worth was tied to a single business cycle. If the business had a bad year, everything had a bad year. He needed capital that operated independently of his trading environment.",
     structure: "Eridanus provided a secured, hard-asset allocation that decouples his investment returns from his business cycle. The agricultural assets are not correlated to his industry.",
-    outcome: "~12.5% net per annum",
+    outcome: "Structured return",
     quote: "I finally have capital that doesn't care what happens in my sector. It just works.",
     icon: <TrendingUp size={20} color="var(--cn-gold)" />,
   },
@@ -234,7 +234,7 @@ const CASE_STUDIES = [
     profile: "Former Entrepreneur, Family Office",
     capitalRange: "R10M+",
     challenge: "He had seen too many 'guaranteed returns' schemes collapse. His primary concern was not yield. It was security. He wanted to understand exactly what his capital was secured against before he would consider any conversation.",
-    structure: "The Eridanus structure secured his capital against physical agricultural assets valued above the entry price from day one. Fixed net returns. Agreed before deployment. No ambiguity.",
+    structure: "The Eridanus structure secured his capital against physical agricultural assets valued above the entry price from day one. Returns are structured and agreed before deployment. No ambiguity.",
     outcome: "Bespoke structure",
     quote: "Cobus was the first person who showed me the asset before asking for the capital.",
     icon: <Shield size={20} color="var(--cn-gold)" />,
@@ -279,7 +279,7 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={200}>
             <p style={{ fontSize: "var(--type-body-lg)", color: "var(--cn-text-secondary)", maxWidth: "480px", lineHeight: 1.75, marginBottom: "2.5rem" }}>
-              Cobus Nel is a CA(SA) and the Chief Investment Officer of Eridanus, a registered Venture Capital Company (VCC) acquiring real South African agricultural assets at below-market value. Fixed net returns. Secured by physical assets.
+              Cobus Nel is a CA(SA) and the Chief Investment Officer of Eridanus, an FSCA-authorised investment company (FSP 48947) acquiring real South African agricultural assets at below-market value. Secured by physical assets.
             </p>
           </FadeIn>
           <FadeIn delay={300}>
@@ -485,7 +485,7 @@ export default function Home() {
                     Cobus Nel on capital structures and the South African investor
                   </p>
                   <p style={{ fontSize: "13px", color: "var(--cn-text-secondary)", lineHeight: 1.7, maxWidth: "680px" }}>
-                    Two live radio interviews on Pretoria FM. Cobus unpacks the mechanics of tax-efficient investment structures, why most investors are unknowingly exposed above the R200,000 deposit guarantee, and what a secured, fixed-return alternative looks like.
+                    Two live radio interviews on Pretoria FM. Cobus unpacks the mechanics of tax-efficient investment structures, why most investors are unknowingly exposed above the R200,000 deposit threshold, and what a structured, asset-backed alternative looks like.
                   </p>
                 </div>
                 {/* Audio players */}
@@ -584,7 +584,7 @@ export default function Home() {
               <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
                 {[
                   { num: "01", title: "The spread.", body: "Your bank borrows your money at 8% and lends it at 21%. The spread is theirs. Not yours." },
-                  { num: "02", title: "The guarantee.", body: "The government guarantees R200,000 of your deposit. Everything above that is unsecured exposure to the bank." },
+                  { num: "02", title: "The asset backing.", body: "Most bank deposits above R200,000 are unsecured exposure to the institution. Eridanus structures capital against physical assets valued above the entry price from day one." },
                   { num: "03", title: "The net figure.", body: "An advertised 13% gross private return is closer to 10.4% net after dividends withholding tax. Eridanus quotes the net number." },
                 ].map((item) => (
                   <div key={item.num} style={{ display: "flex", gap: "1.25rem", alignItems: "flex-start" }}>
@@ -611,9 +611,9 @@ export default function Home() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
                   {[
                     { label: "Capital Security", value: "Secured against physical agricultural assets valued above entry price from day one." },
-                    { label: "Return Basis", value: "Fixed net returns. Agreed before capital is deployed. Not projected. Agreed." },
-                    { label: "Tax Structure", value: "Venture Capital deductible in year of investment. Net figures quoted after dividends withholding tax." },
-                    { label: "Regulatory Status", value: "Registered FSP 48947. Venture Capital Company (VCC). CA(SA) qualified management." },
+                    { label: "Return Basis", value: "Returns are structured and agreed before capital is deployed. Dividends received by investors are after-tax income, quoted net of dividends withholding tax." },
+                    { label: "Regulatory Status", value: "FSCA-authorised FSP 48947. Registered Venture Capital Company (VCC). CA(SA) qualified management." },
+
                   ].map((item) => (
                     <div key={item.label} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
                       <CheckCircle2 size={16} color="var(--cn-gold)" style={{ marginTop: "2px", flexShrink: 0 }} />
@@ -626,7 +626,7 @@ export default function Home() {
                 </div>
                 <div style={{ marginTop: "2rem", paddingTop: "1.5rem", borderTop: "1px solid var(--cn-border)" }}>
                   <p style={{ fontSize: "11px", color: "var(--cn-text-faint)", lineHeight: 1.6 }}>
-                    All investments carry risk. This is not financial advice. Consult a qualified advisor.
+                    Returns are not guaranteed. All investments carry risk, including risk of capital loss. Past performance is not indicative of future performance. This is not financial advice. Consult a qualified advisor.
                   </p>
                 </div>
               </div>
@@ -645,7 +645,7 @@ export default function Home() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "center" }} className="cn-architect-grid">
             <FadeIn>
-              {/* Credentials card, replaces AI office consultation image */}
+              {/* Credentials card */}
               <div style={{ backgroundColor: "var(--cn-bg-primary)", border: "1px solid var(--cn-border)", padding: "3rem" }}>
                 <p style={{ fontSize: "10px", color: "var(--cn-text-faint)", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "2rem" }}>Verified Credentials</p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.75rem" }}>
@@ -740,7 +740,7 @@ export default function Home() {
                 Eridanus.
               </h2>
               <p style={{ fontSize: "var(--type-body-lg)", color: "var(--cn-text-secondary)", maxWidth: "580px", margin: "0 auto", lineHeight: 1.75 }}>
-                A registered registered Venture Capital Company (VCC) acquiring real South African agricultural assets at below-market value. The investor's capital is secured against physical assets worth more than the entry price from day one.
+                A registered Venture Capital Company (VCC) acquiring real South African agricultural assets at below-market value. The investor's capital is secured against physical assets worth more than the entry price from day one.
               </p>
             </div>
           </FadeIn>
@@ -759,8 +759,8 @@ export default function Home() {
               },
               {
                 icon: <Landmark size={24} color="var(--cn-gold)" />,
-                title: "Venture Capital Tax Benefit",
-                body: "Investments in qualifying Venture Capital Companies are deductible from taxable income in the year of investment. The specific benefit depends on individual tax position.",
+                title: "Secured Entry Price",
+                body: "Eridanus acquires assets at below-market value, meaning investor capital is backed by assets valued above the entry price from day one. The deal structure is agreed before any capital is deployed.",
               },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 100}>
@@ -785,54 +785,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── RETURN TIERS ─────────────────────────────────────────────────────── */}
-      <section className="cn-section" style={{ backgroundColor: "var(--cn-bg-secondary)" }}>
-        <div className="container">
-          <FadeIn>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3rem", flexWrap: "wrap", gap: "1rem" }}>
-              <div>
-                <p className="cn-eyebrow">Net Returns</p>
-                <h2 className="cn-headline" style={{ fontSize: "var(--type-h2)" }}>
-                  The number you actually keep.
-                </h2>
-              </div>
-              <p style={{ fontSize: "13px", color: "var(--cn-text-faint)", maxWidth: "320px", lineHeight: 1.65, textAlign: "right" }}>
-                Net figures after dividends withholding tax. Not gross. Not before tax.
-              </p>
-            </div>
-          </FadeIn>
 
-          <div className="cn-stat-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1px", backgroundColor: "var(--cn-border)" }}>
-            {[
-              { tier: "R1M – R2.5M", rate: "~11%", note: "Net per annum", sub: "Capital Architect routing" },
-              { tier: "R2.5M – R5M", rate: "~11.5%", note: "Net per annum", sub: "Direct Cobus Nel routing" },
-              { tier: "R5M+", rate: "~12.5%", note: "Net per annum", sub: "Priority routing | 24hr response" },
-            ].map((row, i) => (
-              <FadeIn key={row.tier} delay={i * 80}>
-                <div style={{ backgroundColor: "var(--cn-bg-primary)", padding: "2.5rem", position: "relative" }}>
-                  {i === 2 && (
-                    <div style={{ position: "absolute", top: "1rem", right: "1rem", backgroundColor: "var(--cn-gold)", padding: "3px 8px" }}>
-                      <span style={{ fontSize: "10px", fontWeight: 600, color: "#0d1210", letterSpacing: "0.1em", textTransform: "uppercase" }}>Priority</span>
-                    </div>
-                  )}
-                  <p style={{ fontSize: "12px", color: "var(--cn-text-faint)", letterSpacing: "0.08em", marginBottom: "1rem" }}>{row.tier}</p>
-                  <p className="cn-figure" style={{ fontSize: "clamp(40px, 5vw, 56px)", lineHeight: 1 }}>{row.rate}</p>
-                  <p style={{ fontSize: "13px", color: "var(--cn-text-secondary)", marginTop: "8px" }}>{row.note}</p>
-                  <p style={{ fontSize: "11px", color: "var(--cn-text-faint)", marginTop: "1rem", paddingTop: "1rem", borderTop: "1px solid var(--cn-border)" }}>{row.sub}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+      {/* Return tiers removed for v1 compliance */}
 
-          <FadeIn delay={250}>
-            <p className="cn-disclaimer" style={{ marginTop: "1.5rem" }}>
-              Returns are indicative net figures after dividends withholding tax. Subject to individual circumstances and SARS assessment. Past performance is not indicative of future results. This is not financial advice. Consult a qualified financial and tax advisor before investing. Eridanus is a registered FSP (FSP 48947). All investments carry risk.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ── CLIENT ARCHETYPES (CASE STUDIES) ─────────────────────────────────── */}
+            {/* ── CLIENT ARCHETYPES (CASE STUDIES) ─────────────────────────────────── */}
       <section className="cn-section" style={{ backgroundColor: "var(--cn-bg-primary)", borderTop: "1px solid var(--cn-border)" }}>
         <div className="container">
           <FadeIn>

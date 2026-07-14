@@ -13,7 +13,7 @@ export default function Footer() {
           <div style={{ gridColumn: "span 1" }}>
             <div className="cn-wordmark" style={{ fontSize: "26px", marginBottom: "1rem" }}>Cobus Nel</div>
             <p style={{ fontSize: "14px", color: "var(--cn-text-secondary)", lineHeight: 1.7, maxWidth: "280px" }}>
-              South Africa's Capital Architect. CA(SA). Chief Investment Officer at Eridanus, a registered FSP and registered Venture Capital Company (VCC).
+              South Africa's Capital Architect. CA(SA). Chief Investment Officer at Eridanus, an FSCA-authorised Financial Services Provider (FSP 48947).
             </p>
             <p style={{ fontSize: "12px", color: "var(--cn-text-faint)", marginTop: "1rem" }}>
               FSP 48947 | Operating since 2018
@@ -44,10 +44,26 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Contact */}
+          {/* Legal */}
           <div>
-            <p style={{ fontSize: "11px", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cn-text-faint)", marginBottom: "1.25rem" }}>Contact</p>
+            <p style={{ fontSize: "11px", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--cn-text-faint)", marginBottom: "1.25rem" }}>Legal</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+              <Link href="/privacy-policy">
+                <span style={{ fontSize: "14px", color: "var(--cn-text-secondary)", transition: "color 200ms ease" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cn-text-primary)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--cn-text-secondary)")}
+                >
+                  Privacy Policy
+                </span>
+              </Link>
+              <Link href="/terms">
+                <span style={{ fontSize: "14px", color: "var(--cn-text-secondary)", transition: "color 200ms ease" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cn-text-primary)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--cn-text-secondary)")}
+                >
+                  Terms of Service
+                </span>
+              </Link>
               <p style={{ fontSize: "14px", color: "var(--cn-text-secondary)" }}>Eridanus</p>
               <p style={{ fontSize: "14px", color: "var(--cn-text-secondary)" }}>Registered FSP 48947</p>
               <p style={{ fontSize: "14px", color: "var(--cn-text-secondary)" }}>South Africa</p>
@@ -68,10 +84,13 @@ export default function Footer() {
         {/* Compliance disclaimer */}
         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
           <p className="cn-disclaimer">
-            This website is for informational purposes only and does not constitute financial advice. Cobus Nel and Eridanus provide access to a diagnostic process, not regulated financial advice. All investment decisions should be made in consultation with a qualified financial advisor. Past performance is not indicative of future results.
+            This website is for informational purposes only and does not constitute financial advice. Cobus Nel and Eridanus provide access to a diagnostic process, not regulated financial advice. All investment decisions should be made in consultation with a qualified financial advisor.
           </p>
           <p className="cn-disclaimer">
-            Eridanus is a registered Financial Services Provider (FSP 48947) and a registered Venture Capital Company (VCC). All investments carry risk. The R200,000 government deposit guarantee applies to qualifying bank deposits only. Returns quoted are indicative net figures after dividends withholding tax and are subject to individual circumstances and SARS assessment. Consult a qualified tax practitioner before investing.
+            Eridanus is an authorised Financial Services Provider, FSP No. 48947, registered with the Financial Sector Conduct Authority (FSCA) of South Africa. Returns are not guaranteed. Past performance is not indicative of future performance. All investments carry risk of loss, including risk of capital loss. Returns quoted are indicative figures after dividends withholding tax and are subject to individual circumstances and SARS assessment. Consult a qualified financial and tax practitioner before investing.
+          </p>
+          <p className="cn-disclaimer" style={{ fontStyle: "italic" }}>
+            This website is a placeholder pending legal review of all compliance language. Privacy Policy and Terms of Service require review by a qualified legal practitioner before any paid advertising campaign goes live.
           </p>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem", marginTop: "0.5rem" }}>
             <p className="cn-disclaimer">

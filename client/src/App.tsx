@@ -10,6 +10,8 @@ import DiscoverySession from "./pages/DiscoverySession";
 import Insights from "./pages/Insights";
 import ForInvestors from "./pages/ForInvestors";
 import Apply from "./pages/Apply";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
 
 function Router() {
   return (
@@ -20,6 +22,8 @@ function Router() {
       <Route path="/insights" component={Insights} />
       <Route path="/for-investors" component={ForInvestors} />
       <Route path="/apply" component={Apply} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/terms" component={Terms} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

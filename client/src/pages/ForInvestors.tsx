@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: "What returns can I expect?",
-    a: "Indicative net returns after dividends withholding tax and SARS assessment are approximately 11% per annum for R1 million to R2.5 million, approximately 11.5% for R2.5 million to R5 million, and approximately 12.5% for R5 million and above. These are net figures. Not gross. Not before tax. The number the investor actually keeps. Returns are fixed and agreed before any capital is deployed.",
+    a: "Returns are structured and agreed before any capital is deployed. They are quoted as indicative net figures after dividends withholding tax and SARS assessment. These are net figures. Not gross. Not before tax. The number the investor actually keeps. Individual returns depend on capital tier, deal structure, and individual tax circumstances.",
   },
   {
     q: "What does Eridanus actually invest in?",
@@ -58,12 +58,12 @@ const faqs = [
     a: "No. This website provides information and access to a diagnostic process. It does not constitute financial advice. Cobus Nel and Eridanus provide access to a structured conversation, not regulated financial advice. All investment decisions should be made in consultation with a qualified financial advisor. The Discovery Session includes access to a team of professionals who can assist with financial structures, insurance, accounting, and legal advice.",
   },
   {
-    q: "What is the R200,000 guarantee and why does it matter?",
-    a: "The South African government guarantees R200,000 of qualifying bank deposits per depositor per institution. Everything above R200,000 in a bank deposit is effectively unsecured exposure to the bank. This is not widely communicated. Most investors with R1 million or more in a bank account are carrying significant uninsured exposure without knowing it.",
+    q: "What is the R200,000 deposit threshold and why does it matter?",
+    a: "The South African government deposit protection scheme covers R200,000 of qualifying bank deposits per depositor per institution. Everything above R200,000 in a bank deposit is effectively unsecured exposure to the bank. This is not widely communicated. Most investors with R1 million or more in a bank account are carrying significant uninsured exposure without knowing it.",
   },
   {
     q: "How is the return structured?",
-    a: "Returns are fixed and agreed before any capital is deployed. The investor knows the exact net return they will receive before signing the mandate. Monthly statements. Full documentation transparency. The return is secured against real agricultural assets. Not a promise. A documented, structured obligation.",
+    a: "Returns are structured and agreed before any capital is deployed. The investor understands the return basis before signing the mandate. Monthly statements. Full documentation transparency. The return is secured against real agricultural assets. A documented, structured obligation.",
   },
   {
     q: "What is the difference between gross and net returns?",
@@ -216,9 +216,9 @@ export default function ForInvestors() {
             </div>
             <div className="cn-tiers-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1px", backgroundColor: "var(--cn-border)", marginBottom: "1.5rem" }}>
               {[
-                { tier: "R1M to R2.5M", rate: "~11%", note: "Net p.a." },
-                { tier: "R2.5M to R5M", rate: "~11.5%", note: "Net p.a." },
-                { tier: "R5M+", rate: "~12.5%", note: "Net p.a." },
+                { tier: "R1M to R2.5M", rate: "Structured", note: "Net of dividends tax" },
+                { tier: "R2.5M to R5M", rate: "Structured", note: "Net of dividends tax" },
+                { tier: "R5M+", rate: "Structured", note: "Net of dividends tax" },
               ].map((row) => (
                 <div key={row.tier} style={{ backgroundColor: "var(--cn-bg-primary)", padding: "1.75rem" }}>
                   <p style={{ fontSize: "12px", color: "var(--cn-text-faint)", marginBottom: "0.75rem" }}>{row.tier}</p>
@@ -228,7 +228,7 @@ export default function ForInvestors() {
               ))}
             </div>
             <p className="cn-disclaimer">
-              Returns are indicative net figures after dividends withholding tax. Subject to individual circumstances and SARS assessment. Past performance is not indicative of future results. This is not financial advice. Consult a qualified financial and tax advisor before investing. Eridanus is a registered FSP (FSP 48947). All investments carry risk.
+              Returns are not guaranteed. Returns are indicative net figures after dividends withholding tax, subject to individual circumstances and SARS assessment. Past performance is not indicative of future performance. All investments carry risk of loss. This is not financial advice. Consult a qualified financial and tax advisor before investing. Eridanus is an authorised FSP (FSP 48947).
             </p>
           </FadeIn>
         </div>

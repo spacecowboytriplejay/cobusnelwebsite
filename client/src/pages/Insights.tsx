@@ -61,15 +61,15 @@ const articles = [
     readTime: "7 min read",
   },
   {
-    title: "The R200,000 guarantee: what it actually means for your capital",
-    excerpt: "The government guarantees R200,000 of any bank deposit. Everything above that is unsecured exposure to the bank. Most investors do not know this. Here is what it means.",
+    title: "The R200,000 deposit threshold: what it actually means for your capital",
+    excerpt: "The government deposit protection scheme covers R200,000 of any bank deposit. Everything above that is unsecured exposure to the bank. Most investors do not know this. Here is what it means.",
     date: "2024",
     category: "Capital Architecture",
     readTime: "4 min read",
   },
   {
     title: "Venture Capital: the structure, the benefit, and the investor it suits",
-    excerpt: "Venture Capital companies offer a specific tax benefit for South African investors. Here is how the structure works, what the benefit is, and which investor profile it suits.",
+    excerpt: "Venture Capital companies offer a specific investment structure for South African investors. Here is how the structure works and which investor profile it suits.",
     date: "2024",
     category: "Tax and Returns",
     readTime: "9 min read",

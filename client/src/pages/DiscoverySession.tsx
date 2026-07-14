@@ -59,11 +59,11 @@ const steps = [
   {
     num: "06",
     title: "Operator-Grounded Investment Explanation",
-    body: "How the capital would actually be deployed, explained by an operator who has bought, valued, and managed real agricultural assets. Not a brochure. Not a pitch deck. A direct explanation of the mechanism: what Eridanus buys, why it buys below market value, how the return is structured, and what the investor owns when the mandate is signed.",
+    body: "How the capital would actually be deployed, explained by an operator who has bought, valued, and managed real agricultural assets. Not a brochure. Not a pitch deck. A direct explanation of the mechanism: what Eridanus buys, why it buys below market value, how the investment structure works, and what the investor owns when the mandate is signed.",
   },
   {
     num: "07",
-    title: "Calibrated Rate Conversation",
+    title: "The Net-Return Conversation",
     body: "The honest net-return discussion. Not 13% gross. Not before dividends withholding tax. The number the investor actually keeps. The return tiers are explained clearly. The investor leaves the session knowing exactly what they would earn if they chose to proceed, and exactly what the conditions of that return are.",
   },
 ];
@@ -165,7 +165,7 @@ export default function DiscoverySession() {
               <h2 className="cn-headline" style={{ fontSize: "var(--type-display)" }}>Who qualifies.</h2>
             </div>
             <p style={{ fontSize: "var(--type-body-lg)", color: "var(--cn-text-secondary)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-              The Discovery Session is for investors with R1 million or more available to deploy. The capital floor is not arbitrary. It is the minimum at which the Eridanus structure delivers meaningful net returns and at which the diagnostic conversation is worth the investor's time.
+              The Discovery Session is for investors with R1 million or more available to deploy. The capital floor is not arbitrary. It is the minimum at which the Eridanus structure is designed for investors with capital ready to work and at which the diagnostic conversation is worth the investor's time.
             </p>
             <p style={{ fontSize: "var(--type-body-lg)", color: "var(--cn-text-secondary)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
               Investors below the R1 million floor are routed to a resource that provides value and a clear path forward for when their capital position reaches the threshold. No hard rejection. A graceful and useful exit.
