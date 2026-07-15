@@ -97,7 +97,7 @@ export default function Apply() {
 
   const getRoutingMessage = () => {
     if (!form.capitalRange) return null;
-    if (form.capitalRange === "below-1m") return { type: "info", msg: "Applications below R1 million are not currently qualifying for a Discovery Session. Join our free Telegram community for capital-building insights, tools, and a clear path forward." };
+    if (form.capitalRange === "below-1m") return { type: "info", msg: "Applications below R1 million are not currently qualifying for a Discovery Session. We will send you a resource that provides value and a clear path forward." };
     if (form.capitalRange === "1m-2.5m") return { type: "standard", msg: "Your application will be reviewed by a Capital Architect and you will be contacted to schedule your Discovery Session." };
     if (form.capitalRange === "2.5m-5m") return { type: "elevated", msg: "Applications at this tier are reviewed by Cobus directly. You will be contacted within 48 hours." };
     if (form.capitalRange === "5m-plus") return { type: "priority", msg: "Priority routing. Applications at this tier receive direct attention from Cobus Nel. You will be contacted within 24 hours." };
@@ -297,19 +297,6 @@ export default function Apply() {
                       }}>
                         <p style={{ fontSize: "13px", color: routing.type === "info" ? "var(--cn-error)" : "var(--cn-gold)", lineHeight: 1.6 }}>
                           {routing.msg}
-                          {routing.type === "info" && (
-                            <>
-                              {" "}
-                              <a
-                                href="https://t.me/+eiV7rWbkxb44MzRk"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ color: "var(--cn-gold)", textDecoration: "underline", fontWeight: 500 }}
-                              >
-                                Join the Telegram community
-                              </a>
-                            </>
-                          )}
                         </p>
                       </div>
                     )}

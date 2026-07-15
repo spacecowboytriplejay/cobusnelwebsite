@@ -3,11 +3,11 @@
  * Design: Institutional Gravity. Article and video hub, ready to populate.
  * Each article has Article JSON-LD. Built for GEO and AI-search quotation.
  */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { ArrowRight, Play, Pause } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 const AGRI_LANDSCAPE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663150514473/bELt3eMdoMZiyNfZHqGqyW/cobus-agricultural-landscape-4pLZCBDFQBG6T4eSDbNXcw.webp";
 
@@ -76,117 +76,26 @@ const articles = [
   },
 ];
 
-// Real YouTube videos
 const videos = [
   {
-    videoId: "tndupVgHhC0",
-    title: "AI and Distribution Growth Infrastructure",
-    desc: "Our AI and distribution growth infrastructure: how we build, automate, and scale content systems that compound over time.",
-    tag: "Growth Infrastructure",
+    title: "The Journey: who Cobus Nel is and the path he walked",
+    desc: "From EY Pretoria to EY Bermuda to commodity trading to agricultural venture capital. The path that built the operator behind Eridanus.",
+    duration: "2 min",
+    tag: "Post A: Memory Lane",
   },
   {
-    videoId: "1PojhbhDv84",
-    title: "Personal Branding and Distribution at Scale",
-    desc: "How we helped build and scale the GIITD Academy to $40k MRR and Timon to 12 million followers across platforms. The personal branding and distribution infrastructure behind it.",
-    tag: "Personal Branding",
+    title: "The Credentials: why his background matters for your capital",
+    desc: "CA(SA). EY Bermuda. Commodity trading. Business rescues. Liquidations. Here is why that specific combination of experience matters for the investor's capital.",
+    duration: "2 min",
+    tag: "Post B: The Credentials",
   },
   {
-    videoId: "-VAZNvF_Zq4",
-    title: "How Two Kids from a Third-World Country Cracked the Code",
-    desc: "The real story behind building a global distribution and growth operation from scratch. No shortcuts. No excuses.",
-    tag: "Origin Story",
-  },
-  {
-    videoId: "5KZVr-4BP4w",
-    title: "The Art of Selling with Leading 7-Figure Ecom Agency Owners",
-    desc: "A masterclass on selling, positioning, and closing with the operators behind some of the most successful ecommerce agencies in the world.",
-    tag: "Sales and Positioning",
+    title: "The Conviction: why he actually does this",
+    desc: "The relationship anchor that moves a viewer from watched a video to following a person. The honest answer to why Cobus Nel does what he does.",
+    duration: "2 min",
+    tag: "Post C: The Conviction",
   },
 ];
-
-function VideoCard({ video }: { video: { videoId: string; title: string; desc: string; tag: string } }) {
-  const [active, setActive] = useState(false);
-  const thumbnailUrl = `https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`;
-
-  if (active) {
-    return (
-      <div style={{ backgroundColor: "var(--cn-bg-secondary)", height: "100%", display: "flex", flexDirection: "column" }}>
-        <div style={{ position: "relative", width: "100%", aspectRatio: "16/9", backgroundColor: "#000" }}>
-          <iframe
-            src={`https://www.youtube.com/embed/${video.videoId}?autoplay=1&rel=0&modestbranding=1`}
-            title={video.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
-          />
-        </div>
-        <div style={{ padding: "1.5rem", flex: 1 }}>
-          <p style={{ fontSize: "10px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--cn-gold)", marginBottom: "0.5rem" }}>{video.tag}</p>
-          <h3 className="cn-headline" style={{ fontSize: "17px", marginBottom: "0.625rem" }}>{video.title}</h3>
-          <p style={{ color: "var(--cn-text-secondary)", fontSize: "13px", lineHeight: 1.7 }}>{video.desc}</p>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div style={{ backgroundColor: "var(--cn-bg-secondary)", height: "100%", display: "flex", flexDirection: "column" }}>
-      <div
-        onClick={() => setActive(true)}
-        style={{ position: "relative", width: "100%", aspectRatio: "16/9", cursor: "pointer", overflow: "hidden", backgroundColor: "#080c0a" }}
-      >
-        <img
-          src={thumbnailUrl}
-          alt={video.title}
-          loading="lazy"
-          style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 400ms ease", display: "block" }}
-          onMouseEnter={(e) => ((e.currentTarget as HTMLImageElement).style.transform = "scale(1.03)")}
-          onMouseLeave={(e) => ((e.currentTarget as HTMLImageElement).style.transform = "scale(1)")}
-          onError={(e) => { (e.currentTarget as HTMLImageElement).src = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`; }}
-        />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%)" }} />
-        <div style={{
-          position: "absolute", top: "50%", left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "52px", height: "52px", borderRadius: "50%",
-          backgroundColor: "rgba(212,165,116,0.92)",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          transition: "transform 200ms ease",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
-        }}
-          onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.transform = "translate(-50%, -50%) scale(1.1)")}
-          onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.transform = "translate(-50%, -50%) scale(1)")}
-        >
-          <Play size={20} fill="#0d1210" color="#0d1210" style={{ marginLeft: "2px" }} />
-        </div>
-        <div style={{ position: "absolute", top: "10px", left: "10px", backgroundColor: "rgba(0,0,0,0.65)", padding: "3px 8px" }}>
-          <span style={{ fontSize: "9px", fontWeight: 700, color: "var(--cn-gold)", letterSpacing: "0.12em", textTransform: "uppercase" }}>{video.tag}</span>
-        </div>
-        <div style={{ position: "absolute", bottom: "10px", right: "10px", backgroundColor: "rgba(0,0,0,0.7)", padding: "3px 8px", display: "flex", alignItems: "center", gap: "4px" }}>
-          <svg width="12" height="9" viewBox="0 0 14 10" fill="none">
-            <path d="M13.72 1.56A1.76 1.76 0 0 0 12.48.3C11.38 0 7 0 7 0S2.62 0 1.52.3A1.76 1.76 0 0 0 .28 1.56C0 2.67 0 5 0 5s0 2.33.28 3.44A1.76 1.76 0 0 0 1.52 9.7C2.62 10 7 10 7 10s4.38 0 5.48-.3a1.76 1.76 0 0 0 1.24-1.26C14 7.33 14 5 14 5s0-2.33-.28-3.44z" fill="#FF0000"/>
-            <path d="M5.6 7.14L9.23 5 5.6 2.86v4.28z" fill="white"/>
-          </svg>
-          <span style={{ fontSize: "9px", fontWeight: 700, color: "rgba(255,255,255,0.85)", letterSpacing: "0.08em" }}>YOUTUBE</span>
-        </div>
-      </div>
-      <div style={{ padding: "1.5rem", flex: 1, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-        <h3 className="cn-headline" style={{ fontSize: "17px", lineHeight: 1.3 }}>{video.title}</h3>
-        <p style={{ color: "var(--cn-text-secondary)", fontSize: "13px", lineHeight: 1.7, flex: 1 }}>{video.desc}</p>
-        <a
-          href={`https://www.youtube.com/watch?v=${video.videoId}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ fontSize: "12px", color: "var(--cn-gold)", textDecoration: "none", letterSpacing: "0.05em", marginTop: "0.5rem" }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
-        >
-          Watch on YouTube →
-        </a>
-      </div>
-    </div>
-  );
-}
 
 export default function Insights() {
   useEffect(() => {
@@ -305,8 +214,23 @@ export default function Insights() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1px", backgroundColor: "var(--cn-border)" }}>
             {videos.map((video, i) => (
-              <FadeIn key={video.videoId} delay={i * 100}>
-                <VideoCard video={video} />
+              <FadeIn key={video.title} delay={i * 100}>
+                <div style={{ backgroundColor: "var(--cn-bg-secondary)", padding: "2rem", height: "100%" }}>
+                  <div style={{ backgroundColor: "var(--cn-bg-tertiary)", height: "180px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1.5rem", position: "relative" }}>
+                    <div style={{ width: "48px", height: "48px", borderRadius: "50%", border: "1px solid var(--cn-gold)", display: "flex", alignItems: "center", justifyContent: "center", opacity: 0.6 }}>
+                      <Play size={18} color="var(--cn-gold)" style={{ marginLeft: "3px" }} />
+                    </div>
+                    <p style={{ position: "absolute", bottom: "12px", right: "12px", fontSize: "11px", color: "var(--cn-text-faint)", letterSpacing: "0.08em" }}>
+                      {video.duration}
+                    </p>
+                    <p style={{ position: "absolute", top: "12px", left: "12px", fontSize: "10px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--cn-gold)" }}>
+                      {video.tag}
+                    </p>
+                  </div>
+                  <h3 className="cn-headline" style={{ fontSize: "18px", marginBottom: "0.75rem" }}>{video.title}</h3>
+                  <p style={{ color: "var(--cn-text-secondary)", fontSize: "14px", lineHeight: 1.7 }}>{video.desc}</p>
+                  <p style={{ marginTop: "1rem", fontSize: "11px", color: "var(--cn-text-faint)", letterSpacing: "0.08em" }}>Video coming soon</p>
+                </div>
               </FadeIn>
             ))}
           </div>
