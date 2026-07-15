@@ -664,8 +664,8 @@ export default function Home() {
                     {
                       logo: null,
                       badge: "VCC Active",
-                      title: "Venture Capital Venture Capital Company",
-                      detail: "SARS-approved VCC status. Investment deductible from taxable income in the year of investment.",
+                      title: "Venture Capital Company (VCC)",
+                      detail: "SARS-approved VCC status. Active and registered with SARS.",
                     },
                     {
                       logo: null,
