@@ -12,7 +12,6 @@ import ForInvestors from "./pages/ForInvestors";
 import Apply from "./pages/Apply";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
-import CapitalDiagnostic from "./pages/CapitalDiagnostic";
 
 function Router() {
   return (
@@ -25,7 +24,6 @@ function Router() {
       <Route path="/apply" component={Apply} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms" component={Terms} />
-      <Route path="/capital-diagnostic" component={CapitalDiagnostic} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
