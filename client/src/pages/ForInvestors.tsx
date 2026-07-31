@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "What is the difference between gross and net returns?",
-    a: "A gross return is the advertised figure before tax. A net return is what the investor actually keeps after dividends withholding tax and SARS assessment. An advertised 13% gross private return is closer to 10.4% net after dividends withholding tax. Eridanus quotes the net figure because that is the only number that matters to the investor.",
+    a: "A gross return is the advertised figure before tax. A net return is what the investor actually keeps after dividends withholding tax and SARS assessment. The gap between the two is often larger than investors expect. Eridanus quotes the net figure because that is the only number that matters to the investor.",
   },
   {
     q: "Who is Cobus Nel?",

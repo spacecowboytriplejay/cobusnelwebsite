@@ -32,7 +32,7 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 
 const featuredArticle = {
   title: "Three things your bank and your financial advisor will never say to you",
-  excerpt: "The spread your bank earns on your capital. The R200,000 guarantee. The difference between 13% gross and 10.4% net. Three facts that change how a serious investor sees their capital position.",
+  excerpt: "The spread your bank earns on your capital. The R200,000 government deposit guarantee. The real gap between what's advertised and what's actually kept, gross versus net. Three facts that change how a serious investor sees their capital position.",
   date: "2024",
   category: "Capital Architecture",
   readTime: "8 min read",
@@ -48,7 +48,7 @@ const articles = [
   },
   {
     title: "Net versus gross: the number that actually matters",
-    excerpt: "An advertised 13% private return is closer to 10.4% after dividends withholding tax. Eridanus quotes the net number. Here is why that distinction matters more than most investors realise.",
+    excerpt: "An advertised private return and the net number after dividends withholding tax are rarely the same figure. Eridanus quotes the net number. Here is why that distinction matters more than most investors realise.",
     date: "2024",
     category: "Tax and Returns",
     readTime: "5 min read",

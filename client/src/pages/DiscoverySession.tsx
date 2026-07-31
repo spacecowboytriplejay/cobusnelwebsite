@@ -64,7 +64,7 @@ const steps = [
   {
     num: "07",
     title: "The Net-Return Conversation",
-    body: "The honest net-return discussion. Not 13% gross. Not before dividends withholding tax. The number the investor actually keeps. The return tiers are explained clearly. The investor leaves the session knowing exactly what they would earn if they chose to proceed, and exactly what the conditions of that return are.",
+    body: "The honest net-return discussion. Not the gross figure. Not before dividends withholding tax. The number the investor actually keeps. The return tiers and structure are explained clearly, so the investor understands exactly what is being proposed and on what conditions, before any decision is made.",
   },
 ];
 

@@ -214,9 +214,9 @@ const CASE_STUDIES = [
     profile: "Corporate Executive, Pretoria",
     capitalRange: "R2.5M – R5M",
     challenge: "30 years of corporate income, a pension fund performing below inflation, and a tax bill that consumed 40% of annual earnings. His capital was working for the bank, not for him.",
-    structure: "Cobus restructured his capital allocation into a Venture Capital vehicle, securing a structured return against physical agricultural assets. Dividends received are after-tax income, quoted net of dividends withholding tax.",
-    outcome: "Structured return",
-    quote: "For the first time, I understood exactly what my money was doing and why. Not a projection. A structure.",
+    structure: "The kind of position Eridanus is built to structure: corporate income, a pension underperforming inflation, and no independent allocation outside of salary and savings.",
+    outcome: "Profile fit",
+    quote: "Investors in this position are typically looking to understand exactly what their money is doing, and why, before they move it anywhere.",
     icon: <Landmark size={20} color="var(--cn-gold)" />,
   },
   {
@@ -224,9 +224,9 @@ const CASE_STUDIES = [
     profile: "Managing Director, Family Business",
     capitalRange: "R5M+",
     challenge: "His entire net worth was tied to a single business cycle. If the business had a bad year, everything had a bad year. He needed capital that operated independently of his trading environment.",
-    structure: "Eridanus provided a secured, hard-asset allocation that decouples his investment returns from his business cycle. The agricultural assets are not correlated to his industry.",
-    outcome: "Structured return",
-    quote: "I finally have capital that doesn't care what happens in my sector. It just works.",
+    structure: "The kind of position this fits: net worth concentrated in a single business, where a hard-asset allocation independent of that business's own cycle is the gap being solved for.",
+    outcome: "Profile fit",
+    quote: "Investors in this position are typically looking for capital that doesn't move with their own sector.",
     icon: <TrendingUp size={20} color="var(--cn-gold)" />,
   },
   {
@@ -234,9 +234,9 @@ const CASE_STUDIES = [
     profile: "Former Entrepreneur, Family Office",
     capitalRange: "R10M+",
     challenge: "He had seen too many 'guaranteed returns' schemes collapse. His primary concern was not yield. It was security. He wanted to understand exactly what his capital was secured against before he would consider any conversation.",
-    structure: "The Eridanus structure secured his capital against physical agricultural assets valued above the entry price from day one. Returns are structured and agreed before deployment. No ambiguity.",
-    outcome: "Bespoke structure",
-    quote: "Cobus was the first person who showed me the asset before asking for the capital.",
+    structure: "The kind of position this fits: capital seeking security over yield, and a clear answer to what it would actually be secured against before any conversation goes further.",
+    outcome: "Profile fit",
+    quote: "Investors in this position typically want to see the asset before they discuss the capital.",
     icon: <Shield size={20} color="var(--cn-gold)" />,
   },
 ];
@@ -585,7 +585,7 @@ export default function Home() {
                 {[
                   { num: "01", title: "The spread.", body: "Your bank borrows your money at 8% and lends it at 21%. The spread is theirs. Not yours." },
                   { num: "02", title: "The asset backing.", body: "Most bank deposits above R200,000 are unsecured exposure to the institution. Eridanus structures capital against physical assets valued above the entry price from day one." },
-                  { num: "03", title: "The net figure.", body: "An advertised 13% gross private return is closer to 10.4% net after dividends withholding tax. Eridanus quotes the net number." },
+                  { num: "03", title: "The net figure.", body: "An advertised gross return and the net figure after dividends withholding tax and SARS assessment are rarely the same. Eridanus quotes the net number, because that is what an investor actually keeps." },
                 ].map((item) => (
                   <div key={item.num} style={{ display: "flex", gap: "1.25rem", alignItems: "flex-start" }}>
                     <span className="cn-step-number" style={{ minWidth: "28px", paddingTop: "2px" }}>{item.num}</span>
