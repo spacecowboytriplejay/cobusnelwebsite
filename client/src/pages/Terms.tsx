@@ -6,10 +6,11 @@
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { setPageMeta } from "@/lib/pageMeta";
 
 export default function Terms() {
   useEffect(() => {
-    document.title = "Terms of Service | Cobus Nel";
+    setPageMeta({ title: "Terms of Service | Cobus Nel", description: "Terms of use for cobusnel.com. Eridanus is an FSCA-authorised Financial Services Provider (FSP 48947).", path: "/terms", noindex: true });
   }, []);
 
   return (

@@ -11,18 +11,19 @@ import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowRight, Shield, TrendingUp, Landmark, Play, Volume2, CheckCircle2, Quote, Pause, Radio } from "lucide-react";
+import { setPageMeta } from "@/lib/pageMeta";
 
 // Asset URLs
-const HERO_PORTRAIT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/rhUIfCWTeaOjkWeM.jpg";
-// Logo assets, CSS filter: brightness(0) invert(1) forces any logo to pure white
-const LOGO_KYKNET = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png";
-const LOGO_ONTBYT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png";
-const LOGO_PRETORIA_FM = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WUnIpufjtRKprHES.png"; // clean white logo on transparent bg
-const LOGO_PRETORIA_FM_COLOUR = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/IUchuQCKmgdRVsiM.png"; // original coloured logo for audio card
-const LOGO_EY = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png";
+const HERO_PORTRAIT = "/cobus-nel-portrait.jpg";
+// Logo assets: self-hosted white-on-transparent PNGs in client/public/logos (no CSS filter needed)
+const LOGO_KYKNET = "/logos/kyknet.png";
+const LOGO_ONTBYT = "/logos/ontbytsake.png";
+const LOGO_PRETORIA_FM = "/logos/pretoria-fm.png"; // clean white logo on transparent bg
+const LOGO_PRETORIA_FM_COLOUR = "/logos/pretoria-fm-colour.png"; // original coloured logo for audio card
+const LOGO_EY = "/logos/ey.png";
 // Audio assets, Pretoria FM interviews
-const AUDIO_1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/ASlVZMyCLBHSEQKi.mp3"; // Aug 2022
-const AUDIO_2 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/SGKrmzPRwtrYubCu.mp3"; // Mar 2026
+const AUDIO_1 = "/audio/pretoria-fm-2025.mp3"; // Aug 2022 per Cobus (source file ht_250822_Eridanus)
+const AUDIO_2 = "/audio/pretoria-fm-2026.mp3"; // 11 Mar 2026 (file HT_260311_ERIDANUS)
 // YouTube Video IDs
 const ONTBYT_SAKE_VIDEO_1 = "ROxZpJNAazM"; // https://youtu.be/ROxZpJNAazM
 const ONTBYT_SAKE_VIDEO_2 = "pKEN61_0fMc"; // https://youtu.be/pKEN61_0fMc
@@ -131,6 +132,11 @@ function PretoriaFMPlayer({ src, title, date }: { src: string; title: string; da
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  const [unavailable, setUnavailable] = useState(false);
+
+  // If the recording is missing on the server, drop the player rather than
+  // show a play button that does nothing.
+  if (unavailable) return null;
 
   const toggle = () => {
     const a = audioRef.current;
@@ -165,8 +171,10 @@ function PretoriaFMPlayer({ src, title, date }: { src: string; title: string; da
       <audio
         ref={audioRef}
         src={src}
+        preload="metadata"
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={() => setDuration(audioRef.current?.duration || 0)}
+        onError={() => setUnavailable(true)}
         onEnded={() => { setPlaying(false); setProgress(0); setCurrentTime(0); }}
       />
       <div style={{ display: "flex", alignItems: "center", gap: "0.875rem" }}>
@@ -243,7 +251,7 @@ const CASE_STUDIES = [
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Cobus Nel | South Africa's Capital Architect";
+    setPageMeta({ title: "Cobus Nel | South Africa's Capital Architect", description: "Cobus Nel, CA(SA), is Chief Investment Officer of Eridanus (FSP 48947), acquiring real South African agricultural assets at below-market value.", path: "/" });
   }, []);
 
   return (
@@ -369,7 +377,7 @@ export default function Home() {
                     maxWidth: "150px",
                     objectFit: "contain",
                     // Force white rendering for logos that already have white/transparent treatment
-                    filter: logo.white ? "brightness(0) invert(1)" : "none",
+                    filter: "none",
                   }}
                 />
               </div>
@@ -400,7 +408,7 @@ export default function Home() {
                 <YouTubeEmbed videoId={ONTBYT_SAKE_VIDEO_1} title="Cobus Nel on Ontbyt Sake | Capital Structures" />
                 <div style={{ padding: "1.5rem", flex: 1, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png" alt="Ontbyt Sake" style={{ height: "22px", width: "auto", objectFit: "contain", opacity: 0.8 }} />
+                    <img src="/logos/ontbytsake.png" alt="Ontbyt Sake" style={{ height: "22px", width: "auto", objectFit: "contain", opacity: 0.8 }} />
                     <span style={{ fontSize: "9px", color: "var(--cn-text-faint)", letterSpacing: "0.12em", textTransform: "uppercase" }}>kykNET</span>
                     <span style={{ marginLeft: "auto", backgroundColor: "var(--cn-gold)", padding: "2px 8px", fontSize: "9px", fontWeight: 700, color: "#0d1210", letterSpacing: "0.12em", textTransform: "uppercase" }}>TV</span>
                   </div>
@@ -425,7 +433,7 @@ export default function Home() {
                 <YouTubeEmbed videoId={ONTBYT_SAKE_VIDEO_2} title="Cobus Nel on Ontbyt Sake | Investment Architecture" />
                 <div style={{ padding: "1.5rem", flex: 1, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png" alt="Ontbyt Sake" style={{ height: "22px", width: "auto", objectFit: "contain", opacity: 0.8 }} />
+                    <img src="/logos/ontbytsake.png" alt="Ontbyt Sake" style={{ height: "22px", width: "auto", objectFit: "contain", opacity: 0.8 }} />
                     <span style={{ fontSize: "9px", color: "var(--cn-text-faint)", letterSpacing: "0.12em", textTransform: "uppercase" }}>kykNET</span>
                     <span style={{ marginLeft: "auto", backgroundColor: "var(--cn-gold)", padding: "2px 8px", fontSize: "9px", fontWeight: 700, color: "#0d1210", letterSpacing: "0.12em", textTransform: "uppercase" }}>TV</span>
                   </div>
@@ -530,7 +538,7 @@ export default function Home() {
                 overflow: "hidden",
               }}>
                 <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.02) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.02) 75%, transparent 75%)", backgroundSize: "60px 60px" }} />
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png" alt="Ernst & Young" style={{ height: "44px", width: "auto", maxWidth: "120px", objectFit: "contain", position: "relative" }} />
+                <img src="/logos/ey.png" alt="Ernst & Young" style={{ height: "44px", width: "auto", maxWidth: "120px", objectFit: "contain", position: "relative" }} />
                 <div style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", padding: "3px 10px", position: "relative" }}>
                   <span style={{ fontSize: "9px", fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.14em", textTransform: "uppercase" }}>CREDENTIAL</span>
                 </div>
@@ -651,7 +659,7 @@ export default function Home() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.75rem" }}>
                   {[
                     {
-                      logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png",
+                      logo: "/logos/ey.png",
                       title: "CA(SA), Ernst & Young",
                       detail: "Articles at EY Pretoria. All board exams passed first time. Seconded to EY Bermuda for international financial structures.",
                     },
@@ -937,10 +945,10 @@ export default function Home() {
             {/* Trust badges at CTA */}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "2rem", marginBottom: "2.5rem", flexWrap: "wrap" }}>
               {[
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png", alt: "kykNET", h: "28px" },
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png", alt: "Ontbyt Sake", h: "30px" },
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WUnIpufjtRKprHES.png", alt: "Pretoria FM", h: "32px" },
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png", alt: "EY", h: "26px" },
+                { src: "/logos/kyknet.png", alt: "kykNET", h: "28px" },
+                { src: "/logos/ontbytsake.png", alt: "Ontbyt Sake", h: "30px" },
+                { src: "/logos/pretoria-fm.png", alt: "Pretoria FM", h: "32px" },
+                { src: "/logos/ey.png", alt: "EY", h: "26px" },
               ].map((logo) => (
                 <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: logo.h, width: "auto", objectFit: "contain", opacity: 0.35 }} />
               ))}

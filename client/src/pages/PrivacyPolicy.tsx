@@ -6,10 +6,11 @@
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { setPageMeta } from "@/lib/pageMeta";
 
 export default function PrivacyPolicy() {
   useEffect(() => {
-    document.title = "Privacy Policy | Cobus Nel";
+    setPageMeta({ title: "Privacy Policy | Cobus Nel", description: "How cobusnel.com and Eridanus (FSP 48947) collect, use and protect personal information under POPIA.", path: "/privacy-policy", noindex: true });
   }, []);
 
   return (

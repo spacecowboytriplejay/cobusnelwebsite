@@ -8,8 +8,9 @@ import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowRight, Play } from "lucide-react";
+import { setPageMeta } from "@/lib/pageMeta";
 
-const AGRI_LANDSCAPE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663150514473/bELt3eMdoMZiyNfZHqGqyW/cobus-agricultural-landscape-4pLZCBDFQBG6T4eSDbNXcw.webp";
+const AGRI_LANDSCAPE = "/cobus-nel-field.jpg";
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -99,7 +100,7 @@ const videos = [
 
 export default function Insights() {
   useEffect(() => {
-    document.title = "Insights | Cobus Nel | South Africa's Capital Architect";
+    setPageMeta({ title: "Insights and Media | Cobus Nel", description: "Television, radio and written appearances by Cobus Nel, CA(SA), on capital structures and South African real-asset investing.", path: "/insights" });
   }, []);
 
   return (
@@ -152,8 +153,8 @@ export default function Insights() {
               <div>
                 <img
                   src={AGRI_LANDSCAPE}
-                  alt="South African agricultural landscape"
-                  style={{ width: "100%", height: "300px", objectFit: "cover", borderRadius: "2px" }}
+                  alt="Cobus Nel on an Eridanus farming operation"
+                  style={{ width: "100%", height: "300px", objectFit: "cover", objectPosition: "center 18%", borderRadius: "2px" }}
                 />
               </div>
             </div>

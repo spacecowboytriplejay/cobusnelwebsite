@@ -8,9 +8,10 @@ import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
+import { setPageMeta } from "@/lib/pageMeta";
 
-const HERO_PORTRAIT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/rhUIfCWTeaOjkWeM.jpg";
-const TRUST_VISUAL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663150514473/bELt3eMdoMZiyNfZHqGqyW/cobus-trust-visual-oLXxtGhyx7aSKmCS9MZann.webp";
+const HERO_PORTRAIT = "/cobus-nel-portrait.jpg";
+const TRUST_VISUAL = "/cobus-nel-portrait.jpg";
 
 function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -33,7 +34,7 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 
 export default function About() {
   useEffect(() => {
-    document.title = "About Cobus Nel | CA(SA), CIO of Eridanus | South Africa's Capital Architect";
+    setPageMeta({ title: "About Cobus Nel | CA(SA), CIO of Eridanus", description: "Chartered accountant, trained at EY in Pretoria and Bermuda, co-founder and Chief Investment Officer of Eridanus (FSP 48947) since 2018.", path: "/about" });
   }, []);
 
   return (
@@ -165,8 +166,8 @@ export default function About() {
                 <div style={{ paddingTop: "2rem", borderTop: "1px solid var(--cn-border)" }}>
                   <img
                     src={TRUST_VISUAL}
-                    alt="Formal mandate signing"
-                    style={{ width: "100%", borderRadius: "2px", objectFit: "cover", height: "300px", marginBottom: "2rem" }}
+                    alt="Cobus Nel, CA(SA), Chief Investment Officer of Eridanus"
+                    style={{ width: "100%", borderRadius: "2px", objectFit: "cover", objectPosition: "center 18%", height: "300px", marginBottom: "2rem" }}
                   />
                   <p style={{ fontSize: "15px", color: "var(--cn-text-secondary)", lineHeight: 1.8, marginBottom: "2rem" }}>
                     Every mandate is documented. Every deal structure is agreed before deployment. Every structure is transparent. That is the standard Cobus Nel holds himself to, and the standard every investor who works with him should expect.

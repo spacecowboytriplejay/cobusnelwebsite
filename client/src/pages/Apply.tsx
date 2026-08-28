@@ -7,6 +7,8 @@ import { useEffect, useRef, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { postLead, fireMetaLead, leadAttribution } from "@/lib/leads";
+import { setPageMeta } from "@/lib/pageMeta";
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -60,9 +62,10 @@ export default function Apply() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
-    document.title = "Apply for a Discovery Session | Cobus Nel | South Africa's Capital Architect";
+    setPageMeta({ title: "Apply for a Discovery Session | Cobus Nel", description: "Apply for a Discovery Session with Cobus Nel, CA(SA), CIO of Eridanus (FSP 48947). Reviewed within 24 to 48 hours. Capital floor R1 million.", path: "/apply" });
   }, []);
 
   const validate = () => {
@@ -86,8 +89,38 @@ export default function Apply() {
       return;
     }
     setSubmitting(true);
-    // Simulate submission
-    await new Promise((r) => setTimeout(r, 1200));
+    setSubmitError(null);
+
+    // Conversion signal first, on the user's own submit action, so Meta gets
+    // it even if the sheet call is slow. Same order as the calculator.
+    fireMetaLead("Discovery Session Application");
+
+    try {
+      await postLead({
+        // Same key set as the calculator form, so both land in one sheet.
+        firstName: form.firstName.trim(),
+        lastName: form.lastName.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim(),
+        capitalRange: form.capitalRange,
+        province: "",
+        source: "cobusnel.com/apply (discovery session form)",
+        submittedAt: new Date().toISOString(),
+        // Fields only this form collects.
+        currentStructure: form.currentStructure,
+        primaryGoal: form.primaryGoal.trim(),
+        timeframe: form.timeframe,
+        heardVia: form.source,
+        routingTier: form.capitalRange === "5m-plus" ? "priority" : form.capitalRange === "2.5m-5m" ? "cobus-direct" : form.capitalRange === "1m-2.5m" ? "capital-architect" : "below-floor",
+        ...leadAttribution(),
+      });
+    } catch (err) {
+      console.error("Submission error:", err);
+      setSubmitting(false);
+      setSubmitError("That did not send. Check your connection and try once more.");
+      return;
+    }
+
     setSubmitting(false);
     setSubmitted(true);
   };
@@ -187,10 +220,10 @@ export default function Apply() {
                   <p style={{ fontSize: "10px", color: "var(--cn-text-faint)", letterSpacing: "0.16em", textTransform: "uppercase", marginBottom: "1rem" }}>As Seen On</p>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                     {[
-                      { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png", alt: "kykNET", label: "Television" },
-                      { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png", alt: "Ontbyt Sake", label: "Business TV" },
-                      { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WUnIpufjtRKprHES.png", alt: "Pretoria FM", label: "Radio" },
-                      { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png", alt: "Ernst & Young", label: "CA(SA) Credential" },
+                      { src: "/logos/kyknet.png", alt: "kykNET", label: "Television" },
+                      { src: "/logos/ontbytsake.png", alt: "Ontbyt Sake", label: "Business TV" },
+                      { src: "/logos/pretoria-fm.png", alt: "Pretoria FM", label: "Radio" },
+                      { src: "/logos/ey.png", alt: "Ernst & Young", label: "CA(SA) Credential" },
                     ].map((logo) => (
                       <div key={logo.alt} style={{ display: "flex", alignItems: "center", gap: "0.875rem", padding: "0.625rem 0.875rem", backgroundColor: "var(--cn-bg-secondary)", border: "1px solid var(--cn-border)" }}>
                         <img src={logo.src} alt={logo.alt} style={{ height: "22px", width: "auto", maxWidth: "70px", objectFit: "contain", opacity: 0.65 }} />
@@ -413,6 +446,9 @@ export default function Apply() {
                     >
                       {submitting ? "Submitting..." : <>Submit Application <ArrowRight size={14} /></>}
                     </button>
+                    {submitError && (
+                      <p role="alert" style={{ fontSize: "12px", color: "var(--cn-error)", marginTop: "0.75rem", lineHeight: 1.6 }}>{submitError}</p>
+                    )}
                     <p className="cn-disclaimer" style={{ marginTop: "1rem" }}>
                       Your information is held in confidence and will not be shared with third parties without your consent. Eridanus is a registered FSP (FSP 48947). All investments carry risk.
                     </p>

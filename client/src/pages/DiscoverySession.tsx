@@ -8,8 +8,9 @@ import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
+import { setPageMeta } from "@/lib/pageMeta";
 
-const OFFICE_CONSULT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663150514473/bELt3eMdoMZiyNfZHqGqyW/cobus-office-consultation-K4xoBifiXsLLwop73txtTb.webp";
+const OFFICE_CONSULT = "/cobus-nel-portrait.jpg";
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -70,7 +71,7 @@ const steps = [
 
 export default function DiscoverySession() {
   useEffect(() => {
-    document.title = "The Discovery Session | Cobus Nel | South Africa's Capital Architect";
+    setPageMeta({ title: "The Discovery Session | Cobus Nel", description: "A structured diagnostic of your capital position with Cobus Nel, CA(SA). One session, no obligation. Capital floor R1 million.", path: "/discovery-session" });
   }, []);
 
   return (
@@ -102,8 +103,8 @@ export default function DiscoverySession() {
             <FadeIn delay={200}>
               <img
                 src={OFFICE_CONSULT}
-                alt="Discovery Session consultation"
-                style={{ width: "100%", height: "420px", objectFit: "cover", borderRadius: "2px" }}
+                alt="Cobus Nel, who leads every Discovery Session"
+                style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 18%", borderRadius: "2px" }}
               />
             </FadeIn>
           </div>

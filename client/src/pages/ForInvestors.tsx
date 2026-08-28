@@ -8,6 +8,7 @@ import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowRight, Plus, Minus } from "lucide-react";
+import { setPageMeta } from "@/lib/pageMeta";
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -138,7 +139,7 @@ function FAQItem({ q, a, delay }: { q: string; a: string; delay: number }) {
 
 export default function ForInvestors() {
   useEffect(() => {
-    document.title = "For Investors | Cobus Nel | South Africa's Capital Architect";
+    setPageMeta({ title: "For Investors | Cobus Nel", description: "How Eridanus (FSP 48947) acquires real South African agricultural assets at below-market value, and what that means for investors with R1 million or more.", path: "/for-investors" });
 
     // Inject FAQPage JSON-LD
     const script = document.createElement("script");
@@ -184,10 +185,10 @@ export default function ForInvestors() {
               <span style={{ fontSize: "10px", color: "var(--cn-text-faint)", letterSpacing: "0.16em", textTransform: "uppercase", whiteSpace: "nowrap" }}>As seen on</span>
               <div style={{ width: "1px", height: "20px", backgroundColor: "var(--cn-border)" }} />
               {[
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png", alt: "kykNET", h: "26px" },
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png", alt: "Ontbyt Sake", h: "28px" },
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WUnIpufjtRKprHES.png", alt: "Pretoria FM", h: "30px" },
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png", alt: "Ernst & Young", h: "24px" },
+                { src: "/logos/kyknet.png", alt: "kykNET", h: "26px" },
+                { src: "/logos/ontbytsake.png", alt: "Ontbyt Sake", h: "28px" },
+                { src: "/logos/pretoria-fm.png", alt: "Pretoria FM", h: "30px" },
+                { src: "/logos/ey.png", alt: "Ernst & Young", h: "24px" },
               ].map((logo) => (
                 <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: logo.h, width: "auto", objectFit: "contain", opacity: 0.4 }} />
               ))}
@@ -246,10 +247,10 @@ export default function ForInvestors() {
             </p>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.75rem", marginBottom: "2rem", flexWrap: "wrap" }}>
               {[
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WWKlZfcTfPTrnvWl.png", alt: "kykNET", h: "24px" },
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/UyOVDuntQbidIfCZ.png", alt: "Ontbyt Sake", h: "26px" },
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/WUnIpufjtRKprHES.png", alt: "Pretoria FM", h: "28px" },
-                { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663766167215/peICczlbTSWeWKgX.png", alt: "EY", h: "22px" },
+                { src: "/logos/kyknet.png", alt: "kykNET", h: "24px" },
+                { src: "/logos/ontbytsake.png", alt: "Ontbyt Sake", h: "26px" },
+                { src: "/logos/pretoria-fm.png", alt: "Pretoria FM", h: "28px" },
+                { src: "/logos/ey.png", alt: "EY", h: "22px" },
               ].map((logo) => (
                 <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: logo.h, width: "auto", objectFit: "contain", opacity: 0.35 }} />
               ))}

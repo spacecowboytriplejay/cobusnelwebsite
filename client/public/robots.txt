@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cobusnel.com/sitemap.xml
