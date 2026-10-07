@@ -13,10 +13,10 @@ export default function Footer() {
           <div style={{ gridColumn: "span 1" }}>
             <div className="cn-wordmark" style={{ fontSize: "26px", marginBottom: "1rem" }}>Cobus Nel</div>
             <p style={{ fontSize: "14px", color: "var(--cn-text-secondary)", lineHeight: 1.7, maxWidth: "280px" }}>
-              South Africa's Capital Architect. CA(SA). Chief Investment Officer and authorised representative of Eridanus, an FSCA-authorised Financial Services Provider (FSP 48947).
+              South Africa's Capital Architect. CA(SA). Chief Investment Officer, involved in running Eridanus, an FSCA-authorised Financial Services Provider (FSP 48947).
             </p>
             <p style={{ fontSize: "12px", color: "var(--cn-text-faint)", marginTop: "1rem" }}>
-              Authorised representative of Eridanus (FSP 48947)
+              Involved in running Eridanus (FSP 48947)
             </p>
           </div>
 
@@ -87,7 +87,7 @@ export default function Footer() {
             This website is for informational purposes only and does not constitute financial advice. Cobus Nel and Eridanus provide access to a diagnostic process, not regulated financial advice. All investment decisions should be made in consultation with a qualified financial advisor.
           </p>
           <p className="cn-disclaimer">
-            Eridanus is an authorised Financial Services Provider, FSP No. 48947, registered with the Financial Sector Conduct Authority (FSCA) of South Africa. Cobus Nel acts as an authorised representative of Eridanus. Returns are not guaranteed. Past performance is not indicative of future performance. All investments carry risk of loss, including risk of capital loss. Returns quoted are indicative figures after dividends withholding tax and are subject to individual circumstances and SARS assessment. Consult a qualified financial and tax practitioner before investing.
+            Eridanus is an authorised Financial Services Provider, FSP No. 48947, registered with the Financial Sector Conduct Authority (FSCA) of South Africa. Cobus Nel is involved in running Eridanus. Returns are not guaranteed. Past performance is not indicative of future performance. All investments carry risk of loss, including risk of capital loss. Returns quoted are indicative figures after dividends withholding tax and are subject to individual circumstances and SARS assessment. Consult a qualified financial and tax practitioner before investing.
           </p>
           <p className="cn-disclaimer" style={{ fontStyle: "italic" }}>
             This website is a placeholder pending legal review of all compliance language. Privacy Policy and Terms of Service require review by a qualified legal practitioner before any paid advertising campaign goes live.
