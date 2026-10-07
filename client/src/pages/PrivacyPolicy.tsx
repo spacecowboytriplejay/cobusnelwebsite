@@ -108,7 +108,7 @@ export default function PrivacyPolicy() {
                 <p style={{ color: "var(--cn-text-primary)", fontSize: "14px", lineHeight: 1.8 }}>
                   Cobus Nel | Eridanus<br />
                   Information Officer: Cobus Nel<br />
-                  FSP 48947<br />
+                  Eridanus, FSP 48947<br />
                   South Africa<br />
                   Contact via the application form at cobusnel.com/apply
                 </p>

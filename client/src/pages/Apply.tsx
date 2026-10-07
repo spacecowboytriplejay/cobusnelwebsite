@@ -65,7 +65,7 @@ export default function Apply() {
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
-    setPageMeta({ title: "Apply for a Discovery Session | Cobus Nel", description: "Apply for a Discovery Session with Cobus Nel, CA(SA), CIO of Eridanus (FSP 48947). Reviewed within 24 to 48 hours. Capital floor R1 million.", path: "/apply" });
+    setPageMeta({ title: "Apply for a Discovery Session | Cobus Nel", description: "Apply for a Discovery Session with Cobus Nel, CA(SA), CIO and authorised representative of Eridanus (FSP 48947). Reviewed within 24 to 48 hours. Capital floor R1 million.", path: "/apply" });
   }, []);
 
   const validate = () => {

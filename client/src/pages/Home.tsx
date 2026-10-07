@@ -220,7 +220,7 @@ const CASE_STUDIES = [
   {
     archetype: "The Late-Career Professional",
     profile: "Corporate Executive, Pretoria",
-    capitalRange: "R2.5M – R5M",
+    capitalRange: "R2.5M - R5M",
     challenge: "30 years of corporate income, a pension fund performing below inflation, and a tax bill that consumed 40% of annual earnings. His capital was working for the bank, not for him.",
     structure: "The kind of position Eridanus is built to structure: corporate income, a pension underperforming inflation, and no independent allocation outside of salary and savings.",
     outcome: "Profile fit",
@@ -251,7 +251,7 @@ const CASE_STUDIES = [
 
 export default function Home() {
   useEffect(() => {
-    setPageMeta({ title: "Cobus Nel | South Africa's Capital Architect", description: "Cobus Nel, CA(SA), is Chief Investment Officer of Eridanus (FSP 48947), acquiring real South African agricultural assets at below-market value.", path: "/" });
+    setPageMeta({ title: "Cobus Nel | South Africa's Capital Architect", description: "Cobus Nel, CA(SA), is CIO and an authorised representative of Eridanus (FSP 48947), acquiring real South African agricultural assets below market value.", path: "/" });
   }, []);
 
   return (
@@ -287,7 +287,7 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={200}>
             <p style={{ fontSize: "var(--type-body-lg)", color: "var(--cn-text-secondary)", maxWidth: "480px", lineHeight: 1.75, marginBottom: "2.5rem" }}>
-              Cobus Nel is a CA(SA) and the Chief Investment Officer of Eridanus, an FSCA-authorised investment company (FSP 48947) acquiring real South African agricultural assets at below-market value. Secured by physical assets.
+              Cobus Nel is a CA(SA), the Chief Investment Officer and an authorised representative of Eridanus, an FSCA-authorised investment company (FSP 48947) acquiring real South African agricultural assets at below-market value. Secured by physical assets.
             </p>
           </FadeIn>
           <FadeIn delay={300}>
@@ -308,7 +308,7 @@ export default function Home() {
             <div style={{ marginTop: "3rem", paddingTop: "2rem", borderTop: "1px solid var(--cn-border)", display: "flex", gap: "2.5rem" }}>
               {[
                 { figure: "2018", label: "Founded" },
-                { figure: "FSP 48947", label: "Registered FSP" },
+                { figure: "FSP 48947", label: "Authorised Rep of Eridanus" },
                 { figure: "VCC Active", label: "Investor Mandate" },
               ].map((item) => (
                 <div key={item.label}>
@@ -620,7 +620,7 @@ export default function Home() {
                   {[
                     { label: "Capital Security", value: "Secured against physical agricultural assets valued above entry price from day one." },
                     { label: "Return Basis", value: "Returns are structured and agreed before capital is deployed. Dividends received by investors are after-tax income, quoted net of dividends withholding tax." },
-                    { label: "Regulatory Status", value: "FSCA-authorised FSP 48947. Registered Venture Capital Company (VCC). CA(SA) qualified management." },
+                    { label: "Regulatory Status", value: "Eridanus is an FSCA-authorised FSP (48947); Cobus Nel acts as its authorised representative. Registered Venture Capital Company (VCC). CA(SA) qualified management." },
 
                   ].map((item) => (
                     <div key={item.label} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
@@ -666,8 +666,8 @@ export default function Home() {
                     {
                       logo: null,
                       badge: "FSP 48947",
-                      title: "Registered Financial Services Provider",
-                      detail: "Licensed and regulated by the Financial Sector Conduct Authority (FSCA) of South Africa.",
+                      title: "Authorised Representative of Eridanus",
+                      detail: "Cobus Nel is an authorised representative of Eridanus, an FSCA-authorised Financial Services Provider (FSP 48947).",
                     },
                     {
                       logo: null,
