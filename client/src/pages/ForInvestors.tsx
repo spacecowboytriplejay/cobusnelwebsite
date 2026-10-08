@@ -43,10 +43,6 @@ const faqs = [
     a: "Eridanus acquires real South African agricultural assets at below-market value. Physical, productive assets: land, equipment, and agricultural infrastructure. The investor's capital deploys into assets worth more than the entry price from day one. The return is secured against real physical assets, not a paper instrument.",
   },
   {
-    q: "Is Eridanus a registered financial services provider?",
-    a: "Yes. Eridanus is a registered Financial Services Provider (FSP 48947) and a registered Venture Capital Company (VCC). It has been operating since 2018. The FSP registration is publicly verifiable through the FSCA. Cobus Nel is the Chief Investment Officer.",
-  },
-  {
     q: "How is the Eridanus investment structured for tax efficiency?",
     a: "Eridanus is structured as a registered Venture Capital Company (VCC). Dividends received by investors are after-tax income. Returns are paid as dividends, which means investors receive them net of dividends tax. This is a key distinction from many other investment structures where gross returns are quoted and tax is deducted later. Eridanus quotes the net figure because that is the number the investor actually receives. Consult a qualified tax practitioner before investing.",
   },
@@ -139,7 +135,7 @@ function FAQItem({ q, a, delay }: { q: string; a: string; delay: number }) {
 
 export default function ForInvestors() {
   useEffect(() => {
-    setPageMeta({ title: "For Investors | Cobus Nel", description: "How Eridanus (FSP 48947) acquires real South African agricultural assets at below-market value, and what that means for investors with R1 million or more.", path: "/for-investors" });
+    setPageMeta({ title: "For Investors | Cobus Nel", description: "How Eridanus Ltd acquires real South African agricultural assets at below-market value, and what that means for investors with R1 million or more.", path: "/for-investors" });
 
     // Inject FAQPage JSON-LD
     const script = document.createElement("script");
@@ -229,7 +225,7 @@ export default function ForInvestors() {
               ))}
             </div>
             <p className="cn-disclaimer">
-              Returns are not guaranteed. Returns are indicative net figures after dividends withholding tax, subject to individual circumstances and SARS assessment. Past performance is not indicative of future performance. All investments carry risk of loss. This is not financial advice. Consult a qualified financial and tax advisor before investing. Eridanus is an authorised FSP (FSP 48947).
+              Returns are not guaranteed. Returns are indicative net figures after dividends withholding tax, subject to individual circumstances and SARS assessment. Past performance is not indicative of future performance. All investments carry risk of loss. This is not financial advice. Consult a qualified financial and tax advisor before investing.
             </p>
           </FadeIn>
         </div>

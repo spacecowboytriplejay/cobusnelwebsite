@@ -65,7 +65,7 @@ export default function Apply() {
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
-    setPageMeta({ title: "Apply for a Discovery Session | Cobus Nel", description: "Apply for a Discovery Session with Cobus Nel, CA(SA), the Capital Architect involved in running Eridanus (FSP 48947). Reviewed within 24 to 48 hours. Capital floor R1 million.", path: "/apply" });
+    setPageMeta({ title: "Apply for a Discovery Session | Cobus Nel", description: "Apply for a Discovery Session with Cobus Nel, CA(SA), the Capital Architect, also involved in running Eridanus Ltd. Reviewed within 24 to 48 hours. Capital floor R1 million.", path: "/apply" });
   }, []);
 
   const validate = () => {
@@ -160,7 +160,7 @@ export default function Apply() {
               </div>
             )}
             <p className="cn-disclaimer">
-              This is not a confirmation of investment. The Discovery Session is a diagnostic conversation. No obligation. Eridanus is a registered FSP (FSP 48947). All investments carry risk.
+              This is not a confirmation of investment. The Discovery Session is a diagnostic conversation. No obligation. All investments carry risk.
             </p>
           </div>
         </section>
@@ -234,7 +234,7 @@ export default function Apply() {
                 </div>
                 <div style={{ marginTop: "1.5rem", paddingTop: "1.5rem", borderTop: "1px solid var(--cn-border)" }}>
                   <p className="cn-disclaimer">
-                    This is not a commitment to invest. The Discovery Session is a diagnostic conversation. No obligation. Eridanus is a registered FSP (FSP 48947). All investments carry risk.
+                    This is not a commitment to invest. The Discovery Session is a diagnostic conversation. No obligation. All investments carry risk.
                   </p>
                 </div>
               </div>
@@ -431,7 +431,7 @@ export default function Apply() {
                         checked={form.disclaimer}
                         onChange={(e) => set("disclaimer", e.target.checked)}
                       />
-                      <span>I acknowledge that this application is not a commitment to invest, that the Discovery Session is a diagnostic conversation with no obligation, and that Eridanus is a registered FSP (FSP 48947) and all investments carry risk. This is not financial advice.</span>
+                      <span>I acknowledge that this application is not a commitment to invest, that the Discovery Session is a diagnostic conversation with no obligation, and that all investments carry risk. This is not financial advice.</span>
                     </label>
                     {errors.disclaimer && <p style={{ fontSize: "12px", color: "var(--cn-error)" }}>{errors.disclaimer}</p>}
                   </div>
@@ -450,7 +450,7 @@ export default function Apply() {
                       <p role="alert" style={{ fontSize: "12px", color: "var(--cn-error)", marginTop: "0.75rem", lineHeight: 1.6 }}>{submitError}</p>
                     )}
                     <p className="cn-disclaimer" style={{ marginTop: "1rem" }}>
-                      Your information is held in confidence and will not be shared with third parties without your consent. Eridanus is a registered FSP (FSP 48947). All investments carry risk.
+                      Your information is held in confidence and will not be shared with third parties without your consent. All investments carry risk.
                     </p>
                   </div>
                 </div>

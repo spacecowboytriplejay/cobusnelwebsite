@@ -251,7 +251,7 @@ const CASE_STUDIES = [
 
 export default function Home() {
   useEffect(() => {
-    setPageMeta({ title: "Cobus Nel | South Africa's Capital Architect", description: "Cobus Nel, CA(SA), the Capital Architect, is involved in running Eridanus (FSP 48947), acquiring real South African agricultural assets below market value.", path: "/" });
+    setPageMeta({ title: "Cobus Nel | South Africa's Capital Architect", description: "Cobus Nel, CA(SA), the Capital Architect, also involved in running Eridanus Ltd, acquiring real South African agricultural assets below market value.", path: "/" });
   }, []);
 
   return (
@@ -287,7 +287,7 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={200}>
             <p style={{ fontSize: "var(--type-body-lg)", color: "var(--cn-text-secondary)", maxWidth: "480px", lineHeight: 1.75, marginBottom: "2.5rem" }}>
-              Cobus Nel is a CA(SA) and Chief Investment Officer, involved in running Eridanus, an FSCA-authorised investment company (FSP 48947) acquiring real South African agricultural assets at below-market value. Secured by physical assets.
+              Cobus Nel is a CA(SA), the Capital Architect, also involved in running Eridanus Ltd, acquiring real South African agricultural assets at below-market value. Secured by physical assets.
             </p>
           </FadeIn>
           <FadeIn delay={300}>
@@ -308,7 +308,7 @@ export default function Home() {
             <div style={{ marginTop: "3rem", paddingTop: "2rem", borderTop: "1px solid var(--cn-border)", display: "flex", gap: "2.5rem" }}>
               {[
                 { figure: "2018", label: "Founded" },
-                { figure: "FSP 48947", label: "Eridanus, Authorised FSP" },
+                { figure: "Eridanus Ltd", label: "Also Involved In Running" },
                 { figure: "VCC Active", label: "Investor Mandate" },
               ].map((item) => (
                 <div key={item.label}>
@@ -620,7 +620,7 @@ export default function Home() {
                   {[
                     { label: "Capital Security", value: "Secured against physical agricultural assets valued above entry price from day one." },
                     { label: "Return Basis", value: "Returns are structured and agreed before capital is deployed. Dividends received by investors are after-tax income, quoted net of dividends withholding tax." },
-                    { label: "Regulatory Status", value: "Eridanus is an FSCA-authorised FSP (48947). Registered Venture Capital Company (VCC). CA(SA) qualified management." },
+                    { label: "Structure", value: "Eridanus Ltd. Registered Venture Capital Company (VCC). CA(SA) qualified management." },
 
                   ].map((item) => (
                     <div key={item.label} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
@@ -665,9 +665,9 @@ export default function Home() {
                     },
                     {
                       logo: null,
-                      badge: "FSP 48947",
-                      title: "Involved in Running Eridanus",
-                      detail: "Cobus Nel is involved in running Eridanus, an FSCA-authorised Financial Services Provider (FSP 48947).",
+                      badge: "Eridanus",
+                      title: "Also Involved in Running Eridanus Ltd",
+                      detail: "Co-founder and Chief Investment Officer, backing real South African agricultural assets since 2018.",
                     },
                     {
                       logo: null,
@@ -708,7 +708,7 @@ export default function Home() {
                 Cobus Nel trained at Ernst & Young in Pretoria, passed all CA(SA) board exams first time, and was seconded to EY Bermuda for international financial structures work. He traded commodities at Export Trading Group, has hands-on farming experience, and has navigated business rescues and liquidations.
               </p>
               <p style={{ color: "var(--cn-text-secondary)", lineHeight: 1.8, marginBottom: "2rem" }}>
-                He co-founded Eridanus with Martin van Vuuren in 2018. The firm has been operating as a registered FSP (FSP 48947) and registered Venture Capital Company (VCC) since inception.
+                He co-founded Eridanus with Martin van Vuuren in 2018. Eridanus Ltd has operated as a registered Venture Capital Company (VCC) since inception.
               </p>
               <div style={{ display: "flex", gap: "2rem", paddingTop: "1.5rem", borderTop: "1px solid var(--cn-border)", marginBottom: "2rem" }}>
                 {[
@@ -959,7 +959,7 @@ export default function Home() {
               </span>
             </Link>
             <p className="cn-disclaimer" style={{ marginTop: "2rem" }}>
-              Eridanus is a registered FSP (FSP 48947) and Venture Capital Company (VCC). All investments carry risk. This is not financial advice.
+              Eridanus Ltd is a registered Venture Capital Company (VCC). All investments carry risk. This is not financial advice.
             </p>
           </FadeIn>
         </div>

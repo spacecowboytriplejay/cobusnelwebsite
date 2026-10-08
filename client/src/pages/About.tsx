@@ -34,7 +34,7 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 
 export default function About() {
   useEffect(() => {
-    setPageMeta({ title: "About Cobus Nel | CA(SA), CIO of Eridanus", description: "Chartered accountant, trained at EY in Pretoria and Bermuda, co-founder and Chief Investment Officer, involved in running Eridanus (FSP 48947).", path: "/about" });
+    setPageMeta({ title: "About Cobus Nel | CA(SA), CIO of Eridanus", description: "Chartered accountant, trained at EY in Pretoria and Bermuda, co-founder and Chief Investment Officer, also involved in running Eridanus Ltd.", path: "/about" });
   }, []);
 
   return (
@@ -75,7 +75,7 @@ export default function About() {
                     { label: "Designation", value: "CA(SA)" },
                     { label: "Role", value: "Chief Investment Officer" },
                     { label: "Company", value: "Eridanus" },
-                    { label: "Involved in running", value: "Eridanus (FSP 48947)" },
+                    { label: "Also involved in running", value: "Eridanus Ltd" },
                     { label: "Founded", value: "2018" },
                     { label: "Training", value: "Ernst and Young, Pretoria and Bermuda" },
                     { label: "Prior role", value: "Commodity Trading, Export Trading Group" },
@@ -97,7 +97,7 @@ export default function About() {
                     <h2 className="cn-headline" style={{ fontSize: "var(--type-h2)" }}>The canonical record.</h2>
                   </div>
                   <p style={{ fontSize: "var(--type-body-lg)", color: "var(--cn-text-secondary)", lineHeight: 1.8, marginBottom: "1.25rem" }}>
-                    Cobus Nel is a Chartered Accountant (CA(SA)) and Chief Investment Officer, involved in running Eridanus, a registered Financial Services Provider (FSP 48947) and registered Venture Capital Company (VCC) backing real South African agricultural assets since 2018. He trained at Ernst and Young in Pretoria and Bermuda. He completed his CA(SA) articles at EY Pretoria, passed all board exams first time, and was seconded to EY Bermuda for international financial structures work.
+                    Cobus Nel is a Chartered Accountant (CA(SA)) and Chief Investment Officer, also involved in running Eridanus Ltd, a registered Venture Capital Company (VCC) backing real South African agricultural assets since 2018. He trained at Ernst and Young in Pretoria and Bermuda. He completed his CA(SA) articles at EY Pretoria, passed all board exams first time, and was seconded to EY Bermuda for international financial structures work.
                   </p>
                   <p style={{ fontSize: "var(--type-body-lg)", color: "var(--cn-text-secondary)", lineHeight: 1.8 }}>
                     Before founding Eridanus with co-founder Martin van Vuuren, Cobus traded commodities at Export Trading Group: maize, soya, wheat, barley, sunflowers, fertilizer. He valued real agricultural assets. He understood supply chains and international markets from the inside. He has hands-on farming, business rescue, and liquidation experience.
@@ -137,7 +137,7 @@ export default function About() {
                     <h2 className="cn-headline" style={{ fontSize: "var(--type-h2)" }}>Eridanus: the vehicle.</h2>
                   </div>
                   <p style={{ fontSize: "15px", color: "var(--cn-text-secondary)", lineHeight: 1.8, marginBottom: "1.25rem" }}>
-                    Eridanus is an FSCA-authorised Financial Services Provider (FSP 48947). It was founded in 2018 by Cobus Nel and Martin van Vuuren. It backs real South African agricultural assets: physical, productive, and valued by operators who understand what they are buying.
+                    Eridanus Ltd was founded in 2018 by Cobus Nel and Martin van Vuuren. It backs real South African agricultural assets: physical, productive, and valued by operators who understand what they are buying.
                   </p>
                   <p style={{ fontSize: "15px", color: "var(--cn-text-secondary)", lineHeight: 1.8, marginBottom: "1.25rem" }}>
                     The Eridanus investment structure acquires assets at below-market value. Investor capital deploys into assets worth more than the entry price from day one. Returns are structured and agreed before investing, and quoted net after dividends withholding tax and SARS assessment. Not gross. Not before tax. The number the investor actually keeps.

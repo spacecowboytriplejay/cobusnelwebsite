@@ -10,7 +10,7 @@ import { setPageMeta } from "@/lib/pageMeta";
 
 export default function Terms() {
   useEffect(() => {
-    setPageMeta({ title: "Terms of Service | Cobus Nel", description: "Terms of use for cobusnel.com. Eridanus is an FSCA-authorised Financial Services Provider (FSP 48947).", path: "/terms", noindex: true });
+    setPageMeta({ title: "Terms of Service | Cobus Nel", description: "Terms of use for cobusnel.com, operated by Cobus Nel in connection with Eridanus Ltd.", path: "/terms", noindex: true });
   }, []);
 
   return (
@@ -41,7 +41,7 @@ export default function Terms() {
             <section>
               <h2 className="cn-headline" style={{ fontSize: "22px", marginBottom: "1rem" }}>2. Nature of this website</h2>
               <p style={{ color: "var(--cn-text-secondary)", lineHeight: 1.8, fontSize: "15px" }}>
-                This Website is operated by Cobus Nel in connection with Eridanus, an FSCA-authorised Financial Services Provider (FSP 48947). The Website provides general information about Cobus Nel, Eridanus, and the Discovery Session diagnostic process. It does not constitute financial advice, investment advice, or a solicitation to invest.
+                This Website is operated by Cobus Nel in connection with Eridanus Ltd. The Website provides general information about Cobus Nel, Eridanus, and the Discovery Session diagnostic process. It does not constitute financial advice, investment advice, or a solicitation to invest.
               </p>
             </section>
 

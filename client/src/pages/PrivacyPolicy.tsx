@@ -10,7 +10,7 @@ import { setPageMeta } from "@/lib/pageMeta";
 
 export default function PrivacyPolicy() {
   useEffect(() => {
-    setPageMeta({ title: "Privacy Policy | Cobus Nel", description: "How cobusnel.com and Eridanus (FSP 48947) collect, use and protect personal information under POPIA.", path: "/privacy-policy", noindex: true });
+    setPageMeta({ title: "Privacy Policy | Cobus Nel", description: "How cobusnel.com and Eridanus Ltd collect, use and protect personal information under POPIA.", path: "/privacy-policy", noindex: true });
   }, []);
 
   return (
@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="cn-headline" style={{ fontSize: "22px", marginBottom: "1rem" }}>1. Who we are</h2>
               <p style={{ color: "var(--cn-text-secondary)", lineHeight: 1.8, fontSize: "15px" }}>
-                This website is operated by Cobus Nel in connection with Eridanus, an FSCA-authorised Financial Services Provider (FSP 48947), registered in South Africa. References to "we," "us," or "our" refer to Cobus Nel and Eridanus. Our Information Officer can be contacted at the address provided in Section 8 below.
+                This website is operated by Cobus Nel in connection with Eridanus Ltd, registered in South Africa. References to "we," "us," or "our" refer to Cobus Nel and Eridanus. Our Information Officer can be contacted at the address provided in Section 8 below.
               </p>
             </section>
 
@@ -108,7 +108,7 @@ export default function PrivacyPolicy() {
                 <p style={{ color: "var(--cn-text-primary)", fontSize: "14px", lineHeight: 1.8 }}>
                   Cobus Nel | Eridanus<br />
                   Information Officer: Cobus Nel<br />
-                  Eridanus, FSP 48947<br />
+                  Eridanus Ltd<br />
                   South Africa<br />
                   Contact via the application form at cobusnel.com/apply
                 </p>

@@ -189,7 +189,7 @@ export default function DiscoverySession() {
               </span>
             </Link>
             <p className="cn-disclaimer" style={{ marginTop: "1.5rem" }}>
-              Discovery Sessions are subject to availability and qualification. This is not financial advice. Eridanus is a registered FSP (FSP 48947). All investments carry risk.
+              Discovery Sessions are subject to availability and qualification. This is not financial advice. All investments carry risk.
             </p>
           </FadeIn>
         </div>
