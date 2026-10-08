@@ -16,7 +16,7 @@ export default function Footer() {
               South Africa's Capital Architect. CA(SA). Also involved in running Eridanus Ltd.
             </p>
             <p style={{ fontSize: "12px", color: "var(--cn-text-faint)", marginTop: "1rem" }}>
-              Also involved in running Eridanus Ltd
+              Eridanus Ltd | Since 2018
             </p>
           </div>
 
